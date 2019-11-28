@@ -36,8 +36,9 @@ class SourceControlLesson extends StatelessWidget {
 
   Widget buildLessonIntro() {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        Padding(padding: EdgeInsets.only(top: 15.0),),
         Text(
           'Introduction',
           textAlign: TextAlign.center,
@@ -48,7 +49,10 @@ class SourceControlLesson extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        lessonIntro,
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: lessonIntro,
+        ),
         Text(
           'Objectives',
           textAlign: TextAlign.center,
@@ -59,23 +63,20 @@ class SourceControlLesson extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        Text(
-          lessonObj,
-          style: TextStyle(
-            fontFamily: 'Arial',
-            fontSize: 17,
-            color: Colors.black,
-          ),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: lessonObj
         ),
-        Divider(),
+        Divider(height: 3, thickness: 3,),
       ],
     );
   }
 
   Widget buildLessonContent(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        Padding(padding: EdgeInsets.only(top: 15.0),),
         Text(
           lessonHeaders[0],
           textAlign: TextAlign.center,
@@ -86,13 +87,9 @@ class SourceControlLesson extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        Text(
-          lessonContent[0],
-          style: TextStyle(
-            fontFamily: 'Arial',
-            fontSize: 17,
-            color: Colors.black,
-          ),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: lessonContent[0],
         ),
         Text(
           lessonHeaders[1],
@@ -104,13 +101,9 @@ class SourceControlLesson extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        Text(
-          lessonContent[1],
-          style: TextStyle(
-            fontFamily: 'Arial',
-            fontSize: 17,
-            color: Colors.black,
-          ),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: lessonContent[1]
         ),
         Divider(height: 3.0, thickness: 3.0,),
         RaisedButton(
@@ -138,7 +131,7 @@ class SourceControlLesson extends StatelessWidget {
   }
 
   final lessonIntro = RichText(
-    textAlign: TextAlign.right,
+    textAlign: TextAlign.left,
     text: TextSpan(
       style: TextStyle(
         fontSize: 17.0,
@@ -159,24 +152,73 @@ class SourceControlLesson extends StatelessWidget {
     ),
   );
 
-  final String lessonObj = """
-  This lesson has the following objectives:
-
-  1) The student will be able to define source control.
-  2) The student will be able to explain why source control is important.
-  """;
+  final lessonObj = RichText(
+    textAlign: TextAlign.left,
+    text: TextSpan(
+      style: TextStyle(
+        fontSize: 17.0,
+        color: Colors.black
+      ),
+      children: [
+        TextSpan(
+          text: 'This lesson has the following objectives: \n'
+                '1) The student will be able to define source control. \n'
+                '2) The student will be able to explain why source control is important.'
+        )
+      ]
+    ),
+  );
 
   final List<String> lessonHeaders = [
     "What is Source Control?",
     "Why is source Control needed?",
   ];
 
-  final List<String> lessonContent = [
-    """
-    Source control is defined as "the management of changes to documents, programs, and other collections of information." Source control is sometimes referred to as "version control" or "revision control" as it is commonly used for managing versions of project files and documents  (including program files). 
-    """,
-    """
-    Source control provides a way for developers manage versions of the product in development. This is useful as a developer can have a working version of the product while they make changes to it. Should anything happen during the development of a change, the developer can always revert back to the most recent version of the project and try again. It is common practice to keep a version for each change.
-    """,
+  final List<RichText> lessonContent = [
+    RichText(
+      textAlign: TextAlign.left,
+      text: TextSpan(
+        style: TextStyle(fontSize: 17.0, color: Colors.black),
+        children: [
+          TextSpan(
+            text: 'Source control',
+            style: TextStyle(fontWeight: FontWeight.bold)
+          ),
+          TextSpan(
+            text: ' is defined as "the management of changes to documents, programs, and other collections of information." '
+                'Source control is sometimes referred to as '
+          ),
+          TextSpan(
+            text: 'version control',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          TextSpan(
+            text: ' or '
+          ),
+          TextSpan(
+            text: 'revision control',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          TextSpan(
+            text: ' as it is commonly used for managing versions of project files and documents (including program files).'
+          )
+        ]
+      ),
+    ),
+    RichText(
+      textAlign: TextAlign.left,
+      text: TextSpan(
+        style: TextStyle(fontSize: 17.0, color: Colors.black),
+        children: [
+          TextSpan(
+            text: 'Source control provides a way for developers manage versions of the product in development. '
+                'This is useful as a developer can have a working version of the product while they make changes to it. '
+                'Should anything happen during the development of a change, '
+                'the developer can always revert back to the most recent version of the project and try again. '
+                'It is common practice to keep a version for each change.'
+          )
+        ]
+      ),
+    )
   ];
 }
