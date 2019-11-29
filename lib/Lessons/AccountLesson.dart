@@ -62,14 +62,32 @@ class AccountLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
+          child: Image.asset(
+              'imageAssets/GitHub-Account1.png'
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(15.0),
           child: exercise1Text[1],
         ),
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
+          child: Image.asset(
+              'imageAssets/GitHub-Account2.png'
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(15.0),
           child: exercise1Text[2],
         ),
         //insert image
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: Image.asset(
+              'imageAssets/GitHub-Account4.png'
+          ),
+        ),
         Container(
           padding: EdgeInsets.all(15.0),
           child: exercise1Text[3],
@@ -88,9 +106,21 @@ class AccountLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
+          child: Image.asset(
+              'imageAssets/GitHub-Account6.png'
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(15.0),
           child: exercise2Text[1],
         ),
         //insert image
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: Image.asset(
+              'imageAssets/GitHub-Account7.png'
+          ),
+        ),
         Container(
           padding: EdgeInsets.all(15.0),
           child: exercise2Text[2],
@@ -173,9 +203,9 @@ class AccountLesson extends StatelessWidget {
       style: TextStyle(color: Colors.black, fontSize: 17.0),
       children: [
         TextSpan(
-          text: 'This lesson has the following objectives: '
-              '1)	The student will have created a GitHub account.'
-              '2)	The student will have basic knowledge on how to manage their account.'
+          text: 'This lesson has the following objectives: \n\n'
+              '1)	The student will have created a GitHub account.\n'
+              '2)	The student will have basic knowledge on how to manage their account.\n'
               '3)	The student will have basic knowledge on the different features that come with a free GitHub account.'
         )
       ]
@@ -284,7 +314,7 @@ class AccountLesson extends StatelessWidget {
                 'lets walk through some features. To view your account’s features, '
                 'click the icon in the top right (this should be some sort of '
                 'pixelated picture). Upon doing so, you will be presented '
-                'with a dropdown like the one below. From now on this will be called the '
+                'with a dropdown. From now on this will be called the '
           ),
           TextSpan(text: 'Profile Dropdown ', style: TextStyle(fontWeight: FontWeight.bold)),
           TextSpan(
