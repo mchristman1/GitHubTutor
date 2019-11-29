@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Q1 {A, B, C, NULL}
-enum Q2 {A, B, C, NULL}
-enum Q3 {A, B, C, NULL}
-enum Q4 {A, B, C, NULL}
-enum Q5 {A, B, C, NULL}
+import '../Constants.dart';
 
 class MergingQStatefulWidget extends StatefulWidget {
   MergingQStatefulWidget({Key key}) : super(key : key);
@@ -29,11 +25,11 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
     );
   }
 
-  Q1 answer1 = Q1.NULL;
-  Q2 answer2 = Q2.NULL;
-  Q3 answer3 = Q3.NULL;
-  Q4 answer4 = Q4.NULL;
-  Q5 answer5 = Q5.NULL;
+  ChoicesMC answer1 = ChoicesMC.NULL;
+  ChoicesMC answer2 = ChoicesMC.NULL;
+  ChoicesMC answer3 = ChoicesMC.NULL;
+  ChoicesMC answer4 = ChoicesMC.NULL;
+  ChoicesMC answer5 = ChoicesMC.NULL;
 
   Widget buildQuiz() {
     return Column(
@@ -46,9 +42,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('Taking two branches and combining them.'),
           leading: Radio(
-            value: Q1.A,
+            value: ChoicesMC.A,
             groupValue: answer1,
-            onChanged: (Q1 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -58,9 +54,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('Overwriting one branch with another.'),
           leading: Radio(
-            value: Q1.B,
+            value: ChoicesMC.B,
             groupValue: answer1,
-            onChanged: (Q1 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -70,9 +66,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('Pulling one branch into another.'),
           leading: Radio(
-            value: Q1.C,
+            value: ChoicesMC.C,
             groupValue: answer1,
-            onChanged: (Q1 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -88,9 +84,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('Switch to the branch to be merged in and run "git merge master"'),
           leading: Radio(
-            value: Q2.A,
+            value: ChoicesMC.A,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -100,9 +96,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('Switch to master and run "git merge other-branch-name"'),
           leading: Radio(
-            value: Q2.B,
+            value: ChoicesMC.B,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -112,9 +108,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('Go to GitHub and use the merge wizard.'),
           leading: Radio(
-            value: Q2.C,
+            value: ChoicesMC.C,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -130,9 +126,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('The branch the user is on.'),
           leading: Radio(
-            value: Q3.A,
+            value: ChoicesMC.A,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -142,9 +138,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('The branch to be merged.'),
           leading: Radio(
-            value: Q3.B,
+            value: ChoicesMC.B,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -154,9 +150,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('The branches do not change, a new branch is created.'),
           leading: Radio(
-            value: Q3.C,
+            value: ChoicesMC.C,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -172,9 +168,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('When the branches to be merged are the same.'),
           leading: Radio(
-            value: Q4.A,
+            value: ChoicesMC.A,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -184,9 +180,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('When the branch to be merged in does not exist.'),
           leading: Radio(
-            value: Q4.B,
+            value: ChoicesMC.B,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -196,9 +192,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('When Git cannot automatically determine what changes to keep.'),
           leading: Radio(
-            value: Q4.C,
+            value: ChoicesMC.C,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -214,9 +210,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('When the same file in the two branches has been changed.'),
           leading: Radio(
-            value: Q5.A,
+            value: ChoicesMC.A,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });
@@ -226,9 +222,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('When new files have been added.'),
           leading: Radio(
-            value: Q5.B,
+            value: ChoicesMC.B,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });
@@ -238,9 +234,9 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ListTile(
           title: Text('When the branches have different file name with the same extension.'),
           leading: Radio(
-            value: Q5.C,
+            value: ChoicesMC.C,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });

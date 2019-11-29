@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Q1 { A, B, C, NULL }
-enum Q2 { A, B, C, NULL }
-enum Q3 { A, B, C, NULL }
-enum Q4 { A, B, C, NULL }
-enum Q5 { A, B, C, NULL }
-enum Q6 { True, False, NULL }
-enum Q7 { True, False, NULL }
-enum Q8 { True, False, NULL }
-enum Q9 { A, B, C, NULL }
-enum Q10 { A, B, C, NULL }
+import '../Constants.dart';
 
 class WindowsCommandsQStatefulWidget extends StatefulWidget {
   WindowsCommandsQStatefulWidget({Key key}) : super(key : key);
@@ -35,16 +26,16 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
     );
   }
 
-  Q1 answer1 = Q1.NULL;
-  Q2 answer2 = Q2.NULL;
-  Q3 answer3 = Q3.NULL;
-  Q4 answer4 = Q4.NULL;
-  Q5 answer5 = Q5.NULL;
-  Q6 answer6 = Q6.NULL;
-  Q7 answer7 = Q7.NULL;
-  Q8 answer8 = Q8.NULL;
-  Q9 answer9 = Q9.NULL;
-  Q10 answer10 = Q10.NULL;
+  ChoicesMC answer1 = ChoicesMC.NULL;
+  ChoicesMC answer2 = ChoicesMC.NULL;
+  ChoicesMC answer3 = ChoicesMC.NULL;
+  ChoicesMC answer4 = ChoicesMC.NULL;
+  ChoicesMC answer5 = ChoicesMC.NULL;
+  ChoicesTF answer6 = ChoicesTF.NULL;
+  ChoicesTF answer7 = ChoicesTF.NULL;
+  ChoicesTF answer8 = ChoicesTF.NULL;
+  ChoicesMC answer9 = ChoicesMC.NULL;
+  ChoicesMC answer10 = ChoicesMC.NULL;
 
   Widget buildQuiz() {
     return Column(
@@ -62,9 +53,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('An action that prepares the files to be added to GitHub.'),
           leading: Radio(
-            value: Q1.A,
+            value: ChoicesMC.A,
             groupValue: answer1,
-            onChanged: (Q1 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -74,9 +65,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('The action that adds files to GitHub.'),
           leading: Radio(
-            value: Q1.B,
+            value: ChoicesMC.B,
             groupValue: answer1,
-            onChanged: (Q1 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -86,9 +77,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('The action that creates new files on GitHub.'),
           leading: Radio(
-            value: Q1.C,
+            value: ChoicesMC.C,
             groupValue: answer1,
-            onChanged: (Q1 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -110,9 +101,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('A feature for tracking changes.'),
           leading: Radio(
-            value: Q2.A,
+            value: ChoicesMC.A,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -122,9 +113,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('The action that adds the changes to the remote repository.'),
           leading: Radio(
-            value: Q2.B,
+            value: ChoicesMC.B,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -134,9 +125,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('The action to save files in a local repository.'),
           leading: Radio(
-            value: Q2.C,
+            value: ChoicesMC.C,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -158,9 +149,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('A section of a repository where a version of the project is stored.'),
           leading: Radio(
-            value: Q3.A,
+            value: ChoicesMC.A,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -170,9 +161,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('There is no such thing.'),
           leading: Radio(
-            value: Q3.B,
+            value: ChoicesMC.B,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -182,9 +173,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('A file in a GitHub repository.'),
           leading: Radio(
-            value: Q3.C,
+            value: ChoicesMC.C,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -206,9 +197,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('The action of switching another branch.'),
           leading: Radio(
-            value: Q4.A,
+            value: ChoicesMC.A,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -218,9 +209,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('The action of downloading a branch from a repository.'),
           leading: Radio(
-            value: Q4.B,
+            value: ChoicesMC.B,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -230,9 +221,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('Tracking of a new branch.'),
           leading: Radio(
-            value: Q4.C,
+            value: ChoicesMC.C,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -254,9 +245,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('git-create new repository.'),
           leading: Radio(
-            value: Q5.A,
+            value: ChoicesMC.A,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });
@@ -266,9 +257,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('git init'),
           leading: Radio(
-            value: Q5.B,
+            value: ChoicesMC.B,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });
@@ -278,9 +269,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('git create "repository name"'),
           leading: Radio(
-            value: Q5.C,
+            value: ChoicesMC.C,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });
@@ -302,9 +293,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q6.True,
+            value: ChoicesTF.True,
             groupValue: answer6,
-            onChanged: (Q6 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer6 = value;
               });
@@ -314,9 +305,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q6.False,
+            value: ChoicesTF.False,
             groupValue: answer6,
-            onChanged: (Q6 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer6 = value;
               });
@@ -338,9 +329,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q7.True,
+            value: ChoicesTF.True,
             groupValue: answer7,
-            onChanged: (Q7 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer7 = value;
               });
@@ -350,9 +341,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q7.False,
+            value: ChoicesTF.False,
             groupValue: answer7,
-            onChanged: (Q7 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer7 = value;
               });
@@ -374,9 +365,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q8.True,
+            value: ChoicesTF.True,
             groupValue: answer8,
-            onChanged: (Q8 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer8 = value;
               });
@@ -386,9 +377,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q8.False,
+            value: ChoicesTF.False,
             groupValue: answer8,
-            onChanged: (Q8 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer8 = value;
               });
@@ -410,9 +401,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('git-switch "branch name"'),
           leading: Radio(
-            value: Q9.A,
+            value: ChoicesMC.A,
             groupValue: answer9,
-            onChanged: (Q9 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
               });
@@ -422,9 +413,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('git-checkout branch "branch name"'),
           leading: Radio(
-            value: Q9.B,
+            value: ChoicesMC.B,
             groupValue: answer9,
-            onChanged: (Q9 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
               });
@@ -434,9 +425,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('git checkout -b "branch name"'),
           leading: Radio(
-            value: Q9.C,
+            value: ChoicesMC.C,
             groupValue: answer9,
-            onChanged: (Q9 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
               });
@@ -458,9 +449,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('So you can talk to the other collaborators.'),
           leading: Radio(
-            value: Q10.A,
+            value: ChoicesMC.A,
             groupValue: answer10,
-            onChanged: (Q10 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
               });
@@ -470,9 +461,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('You shouldn\'t, your changes should explain themselves'),
           leading: Radio(
-            value: Q10.B,
+            value: ChoicesMC.B,
             groupValue: answer10,
-            onChanged: (Q10 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
               });
@@ -482,9 +473,9 @@ class WindowsCommandsQuizState extends State<WindowsCommandsQStatefulWidget> {
         ListTile(
           title: Text('So other people know what changes you made.'),
           leading: Radio(
-            value: Q10.C,
+            value: ChoicesMC.C,
             groupValue: answer10,
-            onChanged: (Q10 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
               });

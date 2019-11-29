@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Q1AnswerChoices { A, B, C, Null }
-enum Q2AnswerChoices { A, B, C, Null }
+import '../Constants.dart';
 
 class SrcControlQStatefulWidget extends StatefulWidget {
   SrcControlQStatefulWidget({Key key}) : super(key: key);
@@ -26,8 +25,8 @@ class SourceControlQuizState extends State<SrcControlQStatefulWidget> {
     );
   }
 
-  Q1AnswerChoices answer1 = Q1AnswerChoices.Null;
-  Q2AnswerChoices answer2 = Q2AnswerChoices.Null;
+  ChoicesMC answer1 = ChoicesMC.NULL;
+  ChoicesMC answer2 = ChoicesMC.NULL;
 
   Widget buildQuiz() {
     return Column(
@@ -43,9 +42,9 @@ class SourceControlQuizState extends State<SrcControlQStatefulWidget> {
         ListTile(
           title: Text('Management of changes to documents, programs, and other collections of information.'),
           leading: Radio(
-            value: Q1AnswerChoices.A,
+            value: ChoicesMC.A,
             groupValue: answer1,
-            onChanged: (Q1AnswerChoices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -55,9 +54,9 @@ class SourceControlQuizState extends State<SrcControlQStatefulWidget> {
         ListTile(
           title: Text('Managing changes to code only.'),
           leading: Radio(
-            value: Q1AnswerChoices.B,
+            value: ChoicesMC.B,
             groupValue: answer1,
-            onChanged: (Q1AnswerChoices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -67,9 +66,9 @@ class SourceControlQuizState extends State<SrcControlQStatefulWidget> {
         ListTile(
           title: Text('GitHub'),
           leading: Radio(
-            value: Q1AnswerChoices.C,
+            value: ChoicesMC.C,
             groupValue: answer1,
-            onChanged: (Q1AnswerChoices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -90,9 +89,9 @@ class SourceControlQuizState extends State<SrcControlQStatefulWidget> {
         ListTile(
           title: Text('Makes it easy to track changes throughout the project.'),
           leading: Radio(
-            value: Q2AnswerChoices.A,
+            value: ChoicesMC.A,
             groupValue: answer2,
-            onChanged: (Q2AnswerChoices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -102,9 +101,9 @@ class SourceControlQuizState extends State<SrcControlQStatefulWidget> {
         ListTile(
           title: Text('To have something to revert back to in case something goes wrong and the current project cannot be recovered.'),
           leading: Radio(
-            value: Q2AnswerChoices.B,
+            value: ChoicesMC.B,
             groupValue: answer2,
-            onChanged: (Q2AnswerChoices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -114,9 +113,9 @@ class SourceControlQuizState extends State<SrcControlQStatefulWidget> {
         ListTile(
           title: Text('All of the above.'),
           leading: Radio(
-            value: Q2AnswerChoices.C,
+            value: ChoicesMC.C,
             groupValue: answer2,
-            onChanged: (Q2AnswerChoices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });

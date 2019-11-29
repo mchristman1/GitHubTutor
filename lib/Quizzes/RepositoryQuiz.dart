@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Q1Choice{ A, B, C, NULL }
-enum Q2Choice{ A, B, C, NULL }
-enum Q3Choice{ True, False, NULL }
-enum Q4Choice{ A, B, C, NULL }
-enum Q5Choice{ True, False, NULL }
+import '../Constants.dart';
 
 class RepoQuizStatefulWidget extends StatefulWidget {
   RepoQuizStatefulWidget({Key key}) : super(key: key);
@@ -29,11 +25,11 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
     );
   }
 
-  Q1Choice answer1 = Q1Choice.NULL;
-  Q2Choice answer2 = Q2Choice.NULL;
-  Q3Choice answer3 = Q3Choice.NULL;
-  Q4Choice answer4 = Q4Choice.NULL;
-  Q5Choice answer5 = Q5Choice.NULL;
+  ChoicesMC answer1 = ChoicesMC.NULL;
+  ChoicesMC answer2 = ChoicesMC.NULL;
+  ChoicesTF answer3 = ChoicesTF.NULL;
+  ChoicesMC answer4 = ChoicesMC.NULL;
+  ChoicesTF answer5 = ChoicesTF.NULL;
 
   Widget buildQuiz() {
     return Column(
@@ -46,9 +42,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('A fancy term for a project on GitHub.'),
           leading: Radio(
-            value: Q1Choice.A,
+            value: ChoicesMC.A,
             groupValue: answer1,
-            onChanged: (Q1Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -58,9 +54,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('Where project files are stored on GitHub.'),
           leading: Radio(
-            value: Q1Choice.B,
+            value: ChoicesMC.B,
             groupValue: answer1,
-            onChanged: (Q1Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -70,9 +66,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('Where old versions of files are stored.'),
           leading: Radio(
-            value: Q1Choice.C,
+            value: ChoicesMC.C,
             groupValue: answer1,
-            onChanged: (Q1Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -88,9 +84,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('People given permission to contrbute to the repository.'),
           leading: Radio(
-            value: Q2Choice.A,
+            value: ChoicesMC.A,
             groupValue: answer2,
-            onChanged: (Q2Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -100,9 +96,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('People who can only view the repository.'),
           leading: Radio(
-            value: Q2Choice.B,
+            value: ChoicesMC.B,
             groupValue: answer2,
-            onChanged: (Q2Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -112,9 +108,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('Anyone who commits to the project.'),
           leading: Radio(
-            value: Q2Choice.C,
+            value: ChoicesMC.C,
             groupValue: answer2,
-            onChanged: (Q2Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -130,9 +126,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q3Choice.True,
+            value: ChoicesTF.True,
             groupValue: answer3,
-            onChanged: (Q3Choice value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer3 = value;
               });
@@ -142,9 +138,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q3Choice.False,
+            value: ChoicesTF.False,
             groupValue: answer3,
-            onChanged: (Q3Choice value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer3 = value;
               });
@@ -160,9 +156,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('Something creative.'),
           leading: Radio(
-            value: Q4Choice.A,
+            value: ChoicesMC.A,
             groupValue: answer4,
-            onChanged: (Q4Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -172,9 +168,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('Something unique and interesting.'),
           leading: Radio(
-            value: Q4Choice.B,
+            value: ChoicesMC.B,
             groupValue: answer4,
-            onChanged: (Q4Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -184,9 +180,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('Something that describes the project.'),
           leading: Radio(
-            value: Q4Choice.C,
+            value: ChoicesMC.C,
             groupValue: answer4,
-            onChanged: (Q4Choice value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -202,9 +198,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q5Choice.True,
+            value: ChoicesTF.True,
             groupValue: answer5,
-            onChanged: (Q5Choice value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer5 = value;
               });
@@ -214,9 +210,9 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q5Choice.False,
+            value: ChoicesTF.False,
             groupValue: answer5,
-            onChanged: (Q5Choice value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer5 = value;
               });

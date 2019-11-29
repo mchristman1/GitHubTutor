@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-enum ChoicesMC {A, B, C, NULL}
-enum ChoicesTF {True, False, NULL}
+import 'package:github_tutor/Constants.dart';
 
 class FinalQStatefulWidget extends StatefulWidget {
   FinalQStatefulWidget({Key key}) : super(key : key);

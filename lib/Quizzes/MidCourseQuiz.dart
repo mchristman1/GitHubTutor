@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_tutor/Constants.dart';
 
 enum Q1 { True, False, NULL}
 enum Q2 { A, B, C, NULL}
@@ -40,21 +41,21 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
     );
   }
 
-  Q1 answer1 = Q1.NULL;
-  Q2 answer2 = Q2.NULL;
-  Q3 answer3 = Q3.NULL;
-  Q4 answer4 = Q4.NULL;
-  Q5 answer5 = Q5.NULL;
-  Q6 answer6 = Q6.NULL;
-  Q7 answer7 = Q7.NULL;
-  Q8 answer8 = Q8.NULL;
-  Q9 answer9 = Q9.NULL;
-  Q10 answer10 = Q10.NULL;
-  Q11 answer11 = Q11.NULL;
-  Q12 answer12 = Q12.NULL;
-  Q13 answer13 = Q13.NULL;
-  Q14 answer14 = Q14.NULL;
-  Q15 answer15 = Q15.NULL;
+  ChoicesTF answer1 = ChoicesTF.NULL;
+  ChoicesMC answer2 = ChoicesMC.NULL;
+  ChoicesMC answer3 = ChoicesMC.NULL;
+  ChoicesMC answer4 = ChoicesMC.NULL;
+  ChoicesMC answer5 = ChoicesMC.NULL;
+  ChoicesMC answer6 = ChoicesMC.NULL;
+  ChoicesTF answer7 = ChoicesTF.NULL;
+  ChoicesTF answer8 = ChoicesTF.NULL;
+  ChoicesTF answer9 = ChoicesTF.NULL;
+  ChoicesMC answer10 = ChoicesMC.NULL;
+  ChoicesMC answer11 = ChoicesMC.NULL;
+  ChoicesMC answer12 = ChoicesMC.NULL;
+  ChoicesMC answer13 = ChoicesMC.NULL;
+  ChoicesTF answer14 = ChoicesTF.NULL;
+  ChoicesMC answer15 = ChoicesMC.NULL;
 
   Widget buildQuiz() {
     return Column(
@@ -90,9 +91,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q1.True,
+            value: ChoicesTF.True,
             groupValue: answer1,
-            onChanged: (Q1 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer1 = value;
               });
@@ -102,9 +103,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q1.False,
+            value: ChoicesTF.False,
             groupValue: answer1,
-            onChanged: (Q1 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer1 = value;
               });
@@ -125,9 +126,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Management of changes to documents, programs, and other collections of information.'),
           leading: Radio(
-            value: Q2.A,
+            value: ChoicesMC.A,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -137,9 +138,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Management of documentation only.'),
           leading: Radio(
-            value: Q2.B,
+            value: ChoicesMC.B,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -149,9 +150,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Controlling the amount of resources for a project.'),
           leading: Radio(
-            value: Q2.C,
+            value: ChoicesMC.C,
             groupValue: answer2,
-            onChanged: (Q2 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -172,9 +173,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A software hosting service.'),
           leading: Radio(
-            value: Q3.A,
+            value: ChoicesMC.A,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -184,9 +185,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A version control system.'),
           leading: Radio(
-            value: Q3.B,
+            value: ChoicesMC.B,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -196,9 +197,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A website for hosting documentation.'),
           leading: Radio(
-            value: Q3.C,
+            value: ChoicesMC.C,
             groupValue: answer3,
-            onChanged: (Q3 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -219,9 +220,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Through a custom system.'),
           leading: Radio(
-            value: Q4.A,
+            value: ChoicesMC.A,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -231,9 +232,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('GitHub does not provide source control.'),
           leading: Radio(
-            value: Q4.B,
+            value: ChoicesMC.B,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -243,9 +244,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Through a system called Git.'),
           leading: Radio(
-            value: Q4.C,
+            value: ChoicesMC.C,
             groupValue: answer4,
-            onChanged: (Q4 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
               });
@@ -266,9 +267,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A version control system.'),
           leading: Radio(
-            value: Q5.A,
+            value: ChoicesMC.A,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });
@@ -278,9 +279,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A software hosting company.'),
           leading: Radio(
-            value: Q5.B,
+            value: ChoicesMC.B,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });
@@ -290,9 +291,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A security software.'),
           leading: Radio(
-            value: Q5.C,
+            value: ChoicesMC.C,
             groupValue: answer5,
-            onChanged: (Q5 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
               });
@@ -313,9 +314,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Team Plan.'),
           leading: Radio(
-            value: Q6.A,
+            value: ChoicesMC.A,
             groupValue: answer6,
-            onChanged: (Q6 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer6 = value;
               });
@@ -325,9 +326,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Pro Plan.'),
           leading: Radio(
-            value: Q6.B,
+            value: ChoicesMC.B,
             groupValue: answer6,
-            onChanged: (Q6 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer6 = value;
               });
@@ -337,9 +338,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Free Plan.'),
           leading: Radio(
-            value: Q6.C,
+            value: ChoicesMC.C,
             groupValue: answer6,
-            onChanged: (Q6 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer6 = value;
               });
@@ -360,9 +361,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q7.True,
+            value: ChoicesTF.True,
             groupValue: answer7,
-            onChanged: (Q7 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer7 = value;
               });
@@ -372,9 +373,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q7.False,
+            value: ChoicesTF.False,
             groupValue: answer7,
-            onChanged: (Q7 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer7 = value;
               });
@@ -395,9 +396,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q8.True,
+            value: ChoicesTF.True,
             groupValue: answer8,
-            onChanged: (Q8 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer8 = value;
               });
@@ -407,9 +408,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q8.False,
+            value: ChoicesTF.False,
             groupValue: answer8,
-            onChanged: (Q8 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer8 = value;
               });
@@ -430,9 +431,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q9.True,
+            value: ChoicesTF.True,
             groupValue: answer9,
-            onChanged: (Q9 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer9 = value;
               });
@@ -442,9 +443,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q9.False,
+            value: ChoicesTF.False,
             groupValue: answer9,
-            onChanged: (Q9 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer9 = value;
               });
@@ -465,9 +466,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('To interact with GitHub from your computer.'),
           leading: Radio(
-            value: Q10.A,
+            value: ChoicesMC.A,
             groupValue: answer10,
-            onChanged: (Q10 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
               });
@@ -477,9 +478,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('To create projects.'),
           leading: Radio(
-            value: Q10.B,
+            value: ChoicesMC.B,
             groupValue: answer10,
-            onChanged: (Q10 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
               });
@@ -489,9 +490,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('To create a GitHub account.'),
           leading: Radio(
-            value: Q10.C,
+            value: ChoicesMC.C,
             groupValue: answer10,
-            onChanged: (Q10 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
               });
@@ -512,9 +513,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Create a repository.'),
           leading: Radio(
-            value: Q11.A,
+            value: ChoicesMC.A,
             groupValue: answer11,
-            onChanged: (Q11 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer11 = value;
               });
@@ -524,9 +525,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Create a GitHub account.'),
           leading: Radio(
-            value: Q11.B,
+            value: ChoicesMC.B,
             groupValue: answer11,
-            onChanged: (Q11 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer11 = value;
               });
@@ -536,9 +537,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Generate an SSH key'),
           leading: Radio(
-            value: Q11.C,
+            value: ChoicesMC.C,
             groupValue: answer11,
-            onChanged: (Q11 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer11 = value;
               });
@@ -559,9 +560,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Add the SSH key to GitHub.'),
           leading: Radio(
-            value: Q12.A,
+            value: ChoicesMC.A,
             groupValue: answer12,
-            onChanged: (Q12 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer12 = value;
               });
@@ -571,9 +572,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Create a new repository on GitHub.'),
           leading: Radio(
-            value: Q12.B,
+            value: ChoicesMC.B,
             groupValue: answer12,
-            onChanged: (Q12 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer12 = value;
               });
@@ -583,9 +584,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Copy the SSH key to your clipboard.'),
           leading: Radio(
-            value: Q12.C,
+            value: ChoicesMC.C,
             groupValue: answer12,
-            onChanged: (Q12 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer12 = value;
               });
@@ -606,9 +607,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A project on GitHub.'),
           leading: Radio(
-            value: Q13.A,
+            value: ChoicesMC.A,
             groupValue: answer13,
-            onChanged: (Q13 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer13 = value;
               });
@@ -618,9 +619,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A place where a project is hosted on GitHub.'),
           leading: Radio(
-            value: Q13.B,
+            value: ChoicesMC.B,
             groupValue: answer13,
-            onChanged: (Q13 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer13 = value;
               });
@@ -630,9 +631,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('A chatroom for collaborators.'),
           leading: Radio(
-            value: Q13.C,
+            value: ChoicesMC.C,
             groupValue: answer13,
-            onChanged: (Q13 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer13 = value;
               });
@@ -653,9 +654,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q14.True,
+            value: ChoicesTF.True,
             groupValue: answer14,
-            onChanged: (Q14 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer14 = value;
               });
@@ -665,9 +666,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q14.False,
+            value: ChoicesTF.False,
             groupValue: answer14,
-            onChanged: (Q14 value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer14 = value;
               });
@@ -688,9 +689,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Read and Write.'),
           leading: Radio(
-            value: Q15.A,
+            value: ChoicesMC.A,
             groupValue: answer15,
-            onChanged: (Q15 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer15 = value;
               });
@@ -700,9 +701,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Read only.'),
           leading: Radio(
-            value: Q15.B,
+            value: ChoicesMC.B,
             groupValue: answer15,
-            onChanged: (Q15 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer15 = value;
               });
@@ -712,9 +713,9 @@ class MidCourseQuizState extends State<MidCourseQStatefulWidget> {
         ListTile(
           title: Text('Write only.'),
           leading: Radio(
-            value: Q15.C,
+            value: ChoicesMC.C,
             groupValue: answer15,
-            onChanged: (Q15 value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer15 = value;
               });

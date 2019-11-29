@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:github_tutor/Quizzes/SourceControlQuiz.dart';
-
-enum Q1Choices { A, B, C, Null }
-enum Q2Choices { A, B, C, Null }
-enum Q3Choices { A, B, C, Null }
-enum Q4Choices { True, False, Null }
-enum Q5Choices { True, False, Null }
+import 'package:github_tutor/Constants.dart';
 
 
 class IntroGitHubQStatefulWidget extends StatefulWidget {
@@ -31,11 +25,11 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
     );
   }
 
-  Q1Choices answer1 = Q1Choices.Null;
-  Q2Choices answer2 = Q2Choices.Null;
-  Q3Choices answer3 = Q3Choices.Null;
-  Q4Choices answer4 = Q4Choices.Null;
-  Q5Choices answer5 = Q5Choices.Null;
+  ChoicesMC answer1 = ChoicesMC.NULL;
+  ChoicesMC answer2 = ChoicesMC.NULL;
+  ChoicesMC answer3 = ChoicesMC.NULL;
+  ChoicesTF answer4 = ChoicesTF.NULL;
+  ChoicesTF answer5 = ChoicesTF.NULL;
 
   Widget buildQuiz() {
     return Column(
@@ -53,9 +47,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('A version control system.'),
           leading: Radio(
-            value: Q1Choices.A,
+            value: ChoicesMC.A,
             groupValue: answer1,
-            onChanged: (Q1Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -65,9 +59,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('A software hosting service that provides source control.'),
           leading: Radio(
-            value: Q1Choices.B,
+            value: ChoicesMC.B,
             groupValue: answer1,
-            onChanged: (Q1Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -77,9 +71,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text(' A website for hosting projects. '),
           leading: Radio(
-            value: Q1Choices.C,
+            value: ChoicesMC.C,
             groupValue: answer1,
-            onChanged: (Q1Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
               });
@@ -100,9 +94,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('A software hosting service.'),
           leading: Radio(
-            value: Q2Choices.A,
+            value: ChoicesMC.A,
             groupValue: answer2,
-            onChanged: (Q2Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -112,9 +106,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('A system for project management.'),
           leading: Radio(
-            value: Q2Choices.B,
+            value: ChoicesMC.B,
             groupValue: answer2,
-            onChanged: (Q2Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -124,9 +118,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('A system for version control.'),
           leading: Radio(
-            value: Q2Choices.C,
+            value: ChoicesMC.C,
             groupValue: answer2,
-            onChanged: (Q2Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
               });
@@ -147,9 +141,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('Source control and code management.'),
           leading: Radio(
-            value: Q3Choices.A,
+            value: ChoicesMC.A,
             groupValue: answer3,
-            onChanged: (Q3Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -159,9 +153,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('Filing of documents.'),
           leading: Radio(
-            value: Q3Choices.B,
+            value: ChoicesMC.B,
             groupValue: answer3,
-            onChanged: (Q3Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -171,9 +165,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('Website hosting.'),
           leading: Radio(
-            value: Q3Choices.C,
+            value: ChoicesMC.C,
             groupValue: answer3,
-            onChanged: (Q3Choices value) {
+            onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
               });
@@ -194,9 +188,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q4Choices.True,
+            value: ChoicesTF.True,
             groupValue: answer4,
-            onChanged: (Q4Choices value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer4 = value;
               });
@@ -206,9 +200,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q4Choices.False,
+            value: ChoicesTF.False,
             groupValue: answer4,
-            onChanged: (Q4Choices value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer4 = value;
               });
@@ -229,9 +223,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('True'),
           leading: Radio(
-            value: Q5Choices.True,
+            value: ChoicesTF.True,
             groupValue: answer5,
-            onChanged: (Q5Choices value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer5 = value;
               });
@@ -241,9 +235,9 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
         ListTile(
           title: Text('False'),
           leading: Radio(
-            value: Q5Choices.False,
+            value: ChoicesTF.False,
             groupValue: answer5,
-            onChanged: (Q5Choices value) {
+            onChanged: (ChoicesTF value) {
               setState(() {
                 answer5 = value;
               });
