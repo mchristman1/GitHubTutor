@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:github_tutor/BLoC/bloc.dart';
+import 'package:github_tutor/BLoC/progress-bloc.dart';
+import 'package:github_tutor/BLoC/quiz-bloc.dart';
 import 'package:github_tutor/Constants.dart';
+import 'package:github_tutor/QuizResults/FinalQuizResults.dart';
 
 class FinalQStatefulWidget extends StatefulWidget {
   FinalQStatefulWidget({Key key}) : super(key : key);
@@ -24,6 +28,13 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
     );
   }
 
+  List<String> studentAnswers = [
+    'NULL', 'NULL', 'NULL', 'NULL', 'NULL',
+    'NULL', 'NULL', 'NULL', 'NULL', 'NULL',
+    'NULL', 'NULL', 'NULL', 'NULL', 'NULL',
+    'NULL', 'NULL', 'NULL', 'NULL', 'NULL'
+  ];
+
   ChoicesMC answer1 = ChoicesMC.NULL;
   ChoicesMC answer2 = ChoicesMC.NULL;
   ChoicesMC answer3 = ChoicesMC.NULL;
@@ -47,6 +58,25 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
   ChoicesTF answer20 = ChoicesTF.NULL;
 
   Widget buildQuiz() {
+
+    final quizBloc = QuizBloc();
+    final progressBloc = BlocProvider.of<ProgressBloc>(context);
+    Function checkProgress() {
+      if (answer1 != ChoicesMC.NULL && answer2 != ChoicesMC.NULL &&
+          answer3 != ChoicesMC.NULL && answer4 != ChoicesMC.NULL &&
+          answer5 != ChoicesMC.NULL && answer6 != ChoicesMC.NULL &&
+          answer7 != ChoicesMC.NULL && answer8 != ChoicesMC.NULL &&
+          answer9 != ChoicesMC.NULL && answer10 != ChoicesMC.NULL &&
+          answer11 != ChoicesTF.NULL && answer12 != ChoicesTF.NULL &&
+          answer13 != ChoicesTF.NULL && answer14 != ChoicesTF.NULL &&
+          answer15 != ChoicesTF.NULL && answer16 != ChoicesTF.NULL &&
+          answer17 != ChoicesTF.NULL && answer18 != ChoicesTF.NULL &&
+          answer19 != ChoicesTF.NULL && answer20 != ChoicesTF.NULL
+      ) {
+        quizBloc.setStatus(true);
+      }
+    }
+
     return Column(
       children: <Widget>[
         Padding(padding: EdgeInsets.all(15),),
@@ -83,6 +113,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -95,6 +127,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -107,6 +141,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -126,6 +162,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -138,6 +176,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -150,6 +190,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -169,6 +211,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -181,6 +225,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -193,6 +239,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -212,6 +260,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -224,6 +274,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -236,6 +288,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -255,6 +309,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -267,6 +323,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -279,6 +337,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -298,6 +358,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer6 = value;
+                studentAnswers[5] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -310,6 +372,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer6 = value;
+                studentAnswers[5] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -322,6 +386,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer6 = value;
+                studentAnswers[5] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -341,6 +407,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer7 = value;
+                studentAnswers[6] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -353,6 +421,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer7 = value;
+                studentAnswers[6] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -365,6 +435,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer7 = value;
+                studentAnswers[6] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -384,6 +456,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer8 = value;
+                studentAnswers[7] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -396,6 +470,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer8 = value;
+                studentAnswers[7] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -408,6 +484,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer8 = value;
+                studentAnswers[7] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -427,6 +505,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
+                studentAnswers[8] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -439,6 +519,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
+                studentAnswers[8] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -451,6 +533,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
+                studentAnswers[8] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -470,6 +554,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
+                studentAnswers[9] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -482,6 +568,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
+                studentAnswers[9] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -494,6 +582,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
+                studentAnswers[9] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -513,6 +603,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer11 = value;
+                studentAnswers[10] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -525,6 +617,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer11 = value;
+                studentAnswers[10] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -544,6 +638,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer12 = value;
+                studentAnswers[11] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -556,6 +652,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer12 = value;
+                studentAnswers[11] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -575,6 +673,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer13 = value;
+                studentAnswers[12] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -587,6 +687,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer13 = value;
+                studentAnswers[12] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -606,6 +708,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer14 = value;
+                studentAnswers[13] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -618,6 +722,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer14 = value;
+                studentAnswers[13] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -637,6 +743,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer15 = value;
+                studentAnswers[14] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -649,6 +757,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer15 = value;
+                studentAnswers[14] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -668,6 +778,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer16 = value;
+                studentAnswers[15] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -680,6 +792,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer16 = value;
+                studentAnswers[15] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -699,6 +813,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer17 = value;
+                studentAnswers[16] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -711,6 +827,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer17 = value;
+                studentAnswers[16] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -730,6 +848,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer18 = value;
+                studentAnswers[17] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -742,6 +862,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer18 = value;
+                studentAnswers[17] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -761,6 +883,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer19 = value;
+                studentAnswers[18] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -773,6 +897,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer19 = value;
+                studentAnswers[18] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -792,6 +918,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer20 = value;
+                studentAnswers[19] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -804,11 +932,147 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer20 = value;
+                studentAnswers[19] = 'F';
+                checkProgress();
               });
             },
           ),
         ),
+        buildStreamBuilder(quizBloc, progressBloc),
       ],
+    );
+  }
+
+  List<int> calculateScore() {
+    double correct = 0.00;
+    int correctAnswers = 0;
+
+    if(answer1 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer2 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer3 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer4 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer5 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer6 == ChoicesMC.C) {
+      correctAnswers++;
+    }
+
+    if(answer7 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer8 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer9 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer10 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer11 == ChoicesTF.True) {
+      correctAnswers++;
+    }
+
+    if(answer12 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer13 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer14 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer15 == ChoicesTF.True) {
+      correctAnswers++;
+    }
+
+    if(answer16 == ChoicesTF.True) {
+      correctAnswers++;
+    }
+
+    if(answer17 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer18 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer19 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer20 == ChoicesTF.True) {
+      correctAnswers++;
+    }
+
+    correct = correctAnswers/20;
+
+    return [(correct*100).round(), correctAnswers];
+
+  }
+
+  Widget buildStreamBuilder(QuizBloc quizBloc, ProgressBloc progressBloc) {
+    return StreamBuilder<bool>(
+      stream: quizBloc.quizStream,
+      initialData: quizBloc.currentStatus,
+      builder: (context, snapshot) {
+        return RaisedButton(
+          color: snapshot.data ? Color.fromRGBO(46, 188, 79, 1) : Colors.grey,
+          child: Text(
+            'Submit',
+            style: TextStyle(fontSize: 20.0, color: Colors.white),
+          ),
+          onPressed: () {
+            if(answer1 != ChoicesMC.NULL && answer2 != ChoicesMC.NULL &&
+                answer3 != ChoicesMC.NULL && answer4 != ChoicesMC.NULL &&
+                answer5 != ChoicesMC.NULL && answer6 != ChoicesMC.NULL &&
+                answer7 != ChoicesMC.NULL && answer8 != ChoicesMC.NULL &&
+                answer9 != ChoicesMC.NULL && answer10 != ChoicesMC.NULL &&
+                answer11 != ChoicesTF.NULL && answer12 != ChoicesTF.NULL &&
+                answer13 != ChoicesTF.NULL && answer14 != ChoicesTF.NULL &&
+                answer15 != ChoicesTF.NULL && answer16 != ChoicesTF.NULL &&
+                answer17 != ChoicesTF.NULL && answer18 != ChoicesTF.NULL &&
+                answer19 != ChoicesTF.NULL && answer20 != ChoicesTF.NULL
+            ) {
+              List<int> results = calculateScore();
+
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      fullscreenDialog: true,
+                      builder: (context) => FinalQuizResults(
+                          score: results[0],
+                          correct: results[1],
+                          studentAnswers: studentAnswers
+                      ))
+              );
+//              Navigator.popUntil(context, ModalRoute.withName('CourseOutline'));
+            }
+          },
+        );
+      },
     );
   }
 }

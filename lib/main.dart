@@ -1,7 +1,11 @@
 //import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:github_tutor/BLoC/bloc.dart';
+import 'package:github_tutor/BLoC/progress-bloc.dart';
+import 'package:github_tutor/Constants.dart';
 import 'package:github_tutor/Lessons/CourseOutline.dart';
+import 'package:github_tutor/ProgressStorage.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,10 +13,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Github Tutor',
-      theme: ThemeData(backgroundColor: Colors.black),
-      home: MainPage(),
+    return BlocProvider<ProgressBloc>(
+        bloc: ProgressBloc(ProgressStorage()),
+        child: MaterialApp(
+          title: 'Github Tutor',
+          theme: ThemeData(backgroundColor: Colors.black),
+          home: MainPage(),
+          routes: {
+            'CourseOutline': (BuildContext context) => CourseOutline()
+          },
+        ),
     );
   }
 }
@@ -83,8 +93,8 @@ class MainPage extends StatelessWidget {
   }
 
   Future getStartedPressed(context) async {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => CourseOutline()));
+    Navigator.pushNamed(
+        context, 'CourseOutline');
   }
 }
 

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:github_tutor/BLoC/bloc.dart';
+import 'package:github_tutor/BLoC/progress-bloc.dart';
+import 'package:github_tutor/BLoC/quiz-bloc.dart';
 import 'package:github_tutor/Constants.dart';
+import 'package:github_tutor/QuizResults/CommandsMacQuizResults.dart';
 
 class MacCommandsQStatefulWidget extends StatefulWidget {
   MacCommandsQStatefulWidget({Key key}) : super(key : key);
@@ -25,6 +29,11 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
     );
   }
 
+  List<String> studentAnswers = [
+    'NULL', 'NULL', 'NULL', 'NULL', 'NULL',
+    'NULL', 'NULL', 'NULL', 'NULL', 'NULL'
+  ];
+
   ChoicesMC answer1 = ChoicesMC.NULL;
   ChoicesMC answer2 = ChoicesMC.NULL;
   ChoicesMC answer3 = ChoicesMC.NULL;
@@ -37,6 +46,20 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
   ChoicesMC answer10 = ChoicesMC.NULL;
 
   Widget buildQuiz() {
+
+    final quizBloc = QuizBloc();
+    final progressBloc = BlocProvider.of<ProgressBloc>(context);
+    Function checkProgress() {
+      if (answer1 != ChoicesMC.NULL && answer2 != ChoicesMC.NULL &&
+          answer3 != ChoicesMC.NULL && answer4 != ChoicesMC.NULL &&
+          answer5 != ChoicesMC.NULL && answer6 != ChoicesTF.NULL &&
+          answer7 != ChoicesTF.NULL && answer8 != ChoicesTF.NULL &&
+          answer9 != ChoicesMC.NULL && answer10 != ChoicesMC.NULL
+      ) {
+        quizBloc.setStatus(true);
+      }
+    }
+
     return Column(
       children: <Widget>[
         Padding(padding: EdgeInsets.all(15),),
@@ -49,6 +72,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
           ),
         ),
         Text('What is a commit?', style: TextStyle(fontSize: 17),),
+        //A
         ListTile(
           title: Text('An action that prepares the files to be added to GitHub.'),
           leading: Radio(
@@ -57,6 +81,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -69,6 +95,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -81,6 +109,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -88,6 +118,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
         Padding(padding: EdgeInsets.all(15),),
         Divider(height: 3, thickness: 3,),
         Padding(padding: EdgeInsets.all(15),),
+        //B
         Text(
           'Question 2 of 10',
           textAlign: TextAlign.center,
@@ -105,6 +136,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -117,6 +150,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -129,6 +164,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -145,6 +182,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
           ),
         ),
         Text('What is a branch?', style: TextStyle(fontSize: 17),),
+        //A
         ListTile(
           title: Text('A section of a repository where a version of the project is stored.'),
           leading: Radio(
@@ -153,6 +191,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -165,6 +205,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -177,6 +219,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -193,6 +237,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
           ),
         ),
         Text('What is cloning?', style: TextStyle(fontSize: 17),),
+        //B
         ListTile(
           title: Text('The action of switching another branch.'),
           leading: Radio(
@@ -201,6 +246,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -213,6 +260,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -225,6 +274,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -241,6 +292,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
           ),
         ),
         Text('How do you create a Git repository on your computer?', style: TextStyle(fontSize: 17),),
+        //B
         ListTile(
           title: Text('git-create new repository.'),
           leading: Radio(
@@ -249,6 +301,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -261,6 +315,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -273,6 +329,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -288,7 +346,10 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
               fontSize: 17.0
           ),
         ),
-        Text('True or False: After you commit something, it is automatically added to GitHub', style: TextStyle(fontSize: 17),),
+        Text('True or False: After you commit something, it is automatically added to GitHub',
+          style: TextStyle(fontSize: 17),
+        ),
+        //F
         ListTile(
           title: Text('True'),
           leading: Radio(
@@ -297,6 +358,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer6 = value;
+                studentAnswers[5] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -309,6 +372,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer6 = value;
+                studentAnswers[5] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -325,6 +390,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
           ),
         ),
         Text('True or False: You should always push to the master branch directly.', style: TextStyle(fontSize: 17),),
+        //F
         ListTile(
           title: Text('True'),
           leading: Radio(
@@ -333,6 +399,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer7 = value;
+                studentAnswers[6] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -345,6 +413,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer7 = value;
+                studentAnswers[6] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -361,6 +431,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
           ),
         ),
         Text('True or False: Cloning and pulling are the same thing.', style: TextStyle(fontSize: 17),),
+        //F
         ListTile(
           title: Text('True'),
           leading: Radio(
@@ -369,6 +440,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer8 = value;
+                studentAnswers[7] = 'T';
+                checkProgress();
               });
             },
           ),
@@ -381,6 +454,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesTF value) {
               setState(() {
                 answer8 = value;
+                studentAnswers[7] = 'F';
+                checkProgress();
               });
             },
           ),
@@ -397,6 +472,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
           ),
         ),
         Text('What is the command to switch branches?', style: TextStyle(fontSize: 17),),
+        //C
         ListTile(
           title: Text('git-switch "branch name"'),
           leading: Radio(
@@ -405,6 +481,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
+                studentAnswers[8] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -417,6 +495,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
+                studentAnswers[8] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -429,6 +509,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer9 = value;
+                studentAnswers[8] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -445,6 +527,7 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
           ),
         ),
         Text('Why should you include a message when committing changes?', style: TextStyle(fontSize: 17),),
+        //C
         ListTile(
           title: Text('So you can talk to the other collaborators.'),
           leading: Radio(
@@ -453,6 +536,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
+                studentAnswers[9] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -465,6 +550,8 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
+                studentAnswers[9] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -477,11 +564,106 @@ class MacCommandsQuizState extends State<MacCommandsQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer10 = value;
+                studentAnswers[9] = 'C';
+                checkProgress();
               });
             },
           ),
-        )
+        ),
+        buildStreamBuilder(quizBloc, progressBloc),
       ],
+    );
+  }
+
+  List<int> calculateScore() {
+    double correct = 0.00;
+    int correctAnswers = 0;
+
+    if(answer1 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer2 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer3 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer4 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer5 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer6 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer7 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer8 == ChoicesTF.False) {
+      correctAnswers++;
+    }
+
+    if(answer9 == ChoicesMC.C) {
+      correctAnswers++;
+    }
+
+    if(answer10 == ChoicesMC.C) {
+      correctAnswers++;
+    }
+
+    correct = correctAnswers/10;
+
+    return [(correct*100).round(), correctAnswers];
+
+  }
+
+  Widget buildStreamBuilder(QuizBloc quizBloc, ProgressBloc progressBloc) {
+    return StreamBuilder<bool>(
+      stream: quizBloc.quizStream,
+      initialData: quizBloc.currentStatus,
+      builder: (context, snapshot) {
+        return RaisedButton(
+          color: snapshot.data ? Color.fromRGBO(46, 188, 79, 1) : Colors.grey,
+          child: Text(
+            'Submit',
+            style: TextStyle(fontSize: 20.0, color: Colors.white),
+          ),
+          onPressed: () {
+            if(answer1 != ChoicesMC.NULL && answer2 != ChoicesMC.NULL &&
+                answer3 != ChoicesMC.NULL && answer4 != ChoicesMC.NULL &&
+                answer5 != ChoicesMC.NULL && answer6 != ChoicesTF.NULL &&
+                answer7 != ChoicesTF.NULL && answer8 != ChoicesTF.NULL &&
+                answer9 != ChoicesMC.NULL && answer10 != ChoicesMC.NULL
+            ) {
+              List<int> results = calculateScore();
+
+              if(progressBloc.currentUnlockedLessons[8] == false && results[0] >= 80) {
+                progressBloc.unlockNextLesson(8);
+              }
+
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      fullscreenDialog: true,
+                      builder: (context) => MacCommandsQuizResults(
+                          score: results[0],
+                          correct: results[1],
+                          studentAnswers: studentAnswers
+                      ))
+              );
+//              Navigator.popUntil(context, ModalRoute.withName('CourseOutline'));
+            }
+          },
+        );
+      },
     );
   }
 

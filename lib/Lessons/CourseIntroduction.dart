@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:github_tutor/BLoC/bloc.dart';
+import 'package:github_tutor/BLoC/progress-bloc.dart';
 
 class CourseIntroduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
@@ -15,12 +16,13 @@ class CourseIntroduction extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
-          child: buildIntroduction()
+          child: buildIntroduction(context)
       ),
     );
   }
 
-  Widget buildIntroduction() {
+  Widget buildIntroduction(BuildContext context) {
+    final progressBloc = BlocProvider.of<ProgressBloc>(context);
 
     return Padding(
       padding: EdgeInsets.all(15),
@@ -31,6 +33,14 @@ class CourseIntroduction extends StatelessWidget {
           Padding(padding: EdgeInsets.all(15)),
           Container(
             child: introduction,
+          ),
+          RaisedButton(
+            child: Text('Continue'),
+            padding: EdgeInsets.all(15.0),
+            onPressed: () {
+              progressBloc.unlockNextLesson(1);
+              Navigator.pop(context);
+            },
           )
         ],
       ),

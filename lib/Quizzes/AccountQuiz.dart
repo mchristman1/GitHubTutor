@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:github_tutor/BLoC/bloc.dart';
+import 'package:github_tutor/BLoC/progress-bloc.dart';
+import 'package:github_tutor/BLoC/quiz-bloc.dart';
 import 'package:github_tutor/Constants.dart';
+import 'package:github_tutor/QuizResults/AccountQuizResults.dart';
 
 class AccountQStatefulWidget extends StatefulWidget {
   AccountQStatefulWidget({Key key}) : super(key: key);
@@ -24,6 +28,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
     );
   }
 
+  List<String> studentAnswers = ['NULL', 'NULL', 'NULL', 'NULL', 'NULL'];
+
   ChoicesMC answer1 = ChoicesMC.NULL;
   ChoicesMC answer2 = ChoicesMC.NULL;
   ChoicesMC answer3 = ChoicesMC.NULL;
@@ -33,6 +39,21 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
 
 
   Widget buildQuiz() {
+
+    final quizBloc = QuizBloc();
+    final progressBloc = BlocProvider.of<ProgressBloc>(context);
+    Function checkProgress() {
+      if (answer1 != ChoicesMC.NULL &&
+          answer2 != ChoicesMC.NULL &&
+          answer3 != ChoicesMC.NULL &&
+          answer4 != ChoicesMC.NULL &&
+          answer5 != ChoicesMC.NULL
+
+      ) {
+        quizBloc.setStatus(true);
+      }
+    }
+
     return Column(
       children: <Widget>[
         Padding(padding: EdgeInsets.all(10),),
@@ -43,6 +64,7 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
           'What should you do when creating a username?',
           style: TextStyle(fontSize: 17),
         ),
+        //A
         ListTile(
           title: Text('Keep it professional.'),
           leading: Radio(
@@ -51,6 +73,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -63,6 +87,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'B';
+                checkProgress();
               });
             }
           ),
@@ -75,6 +101,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -88,6 +116,7 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
           'What email should you use when creating an account?',
           style: TextStyle(fontSize: 17),
         ),
+        //C
         ListTile(
           title: Text('Your spam account.'),
           leading: Radio(
@@ -96,6 +125,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -108,6 +139,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -120,6 +153,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -133,6 +168,7 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
           'What should your password be?',
           style: TextStyle(fontSize: 17),
         ),
+        //C
         ListTile(
           title: Text('Secure.'),
           leading: Radio(
@@ -141,6 +177,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -153,6 +191,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -165,6 +205,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -178,6 +220,7 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
           'What sorts of plans are offered?',
           style: TextStyle(fontSize: 17),
         ),
+        //A
         ListTile(
           title: Text('Free and paid plans for individuals and teams.'),
           leading: Radio(
@@ -186,6 +229,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -198,6 +243,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -210,6 +257,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -222,7 +271,9 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
         Text(
           'Which of the below is NOT a feature of your free account?',
           style: TextStyle(fontSize: 17),
+          textAlign: TextAlign.center,
         ),
+        //B
         ListTile(
           title: Text('Unlimited public repositories'),
           leading: Radio(
@@ -231,6 +282,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -243,6 +296,8 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -255,11 +310,86 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'C';
+                checkProgress();
               });
             },
           ),
-        )
+        ),
+        buildStreamBuilder(quizBloc, progressBloc)
       ],
+    );
+  }
+
+  List<int> calculateScore() {
+    double correct = 0.00;
+    int correctAnswers = 0;
+
+    if(answer1 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer2 == ChoicesMC.C) {
+      correctAnswers++;
+    }
+
+    if(answer3 == ChoicesMC.C) {
+      correctAnswers++;
+    }
+
+    if(answer4 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer5 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    correct = correctAnswers/5;
+
+    return [(correct*100).round(), correctAnswers];
+
+  }
+
+  Widget buildStreamBuilder(QuizBloc quizBloc, ProgressBloc progressBloc) {
+    return StreamBuilder<bool>(
+      stream: quizBloc.quizStream,
+      initialData: quizBloc.currentStatus,
+      builder: (context, snapshot) {
+        return RaisedButton(
+          color: snapshot.data ? Color.fromRGBO(46, 188, 79, 1) : Colors.grey,
+          child: Text(
+            'Submit',
+            style: TextStyle(fontSize: 20.0, color: Colors.white),
+          ),
+          onPressed: () {
+            if(answer1 != ChoicesMC.NULL &&
+                answer2 != ChoicesMC.NULL &&
+                answer3 != ChoicesMC.NULL &&
+                answer4 != ChoicesMC.NULL &&
+                answer5 != ChoicesMC.NULL
+            ) {
+              List<int> results = calculateScore();
+
+              if(progressBloc.currentUnlockedLessons[4] == false && results[0] >= 80) {
+                progressBloc.unlockNextLesson(4);
+              }
+
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      fullscreenDialog: true,
+                      builder: (context) => AccountQuizResults(
+                          score: results[0],
+                          correct: results[1],
+                          studentAnswers: studentAnswers
+                      ))
+              );
+//              Navigator.popUntil(context, ModalRoute.withName('CourseOutline'));
+            }
+          },
+        );
+      },
     );
   }
 }

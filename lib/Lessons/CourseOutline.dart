@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:github_tutor/BLoC/bloc.dart';
+import 'package:github_tutor/BLoC/progress-bloc.dart';
+import 'package:github_tutor/Constants.dart';
 import 'package:github_tutor/Lessons/AccountLesson.dart';
 import 'package:github_tutor/Lessons/CourseIntroduction.dart';
 import 'package:github_tutor/Lessons/GitHubIntroduction.dart';
@@ -13,24 +16,25 @@ import 'package:github_tutor/Quizzes/FinalQuiz.dart';
 import 'package:github_tutor/Quizzes/MidCourseQuiz.dart';
 
 class CourseOutline extends StatelessWidget {
-  final List<String> courseTitles = [
-    "0. Introduction",
-    "1. Introduction to Source Control",
-    "2. Introduction to Github",
-    "3. Setting up a Github account",
-    "4. Setup for Mac or Windows",
-    "5. Repositories",
-    "Mid-Course Quiz",
-    "6. Commands for Mac or Windows",
-    "7. Merging",
-    "Final Quiz",
-    "A. Key Terms",
-    "B. Links"
-  ];
+  final Map<int, String> courseTitles = {
+    0: '0. Introduction',
+    1: '1. Introduction to Source Control',
+    2: '2. Introduction to Github',
+    3: '3. Setting up a Github account',
+    4: '4. Setup for Mac or Windows',
+    5: '5. Repositories',
+    6: 'Mid-Course Quiz',
+    7: '6. Commands for Mac or Windows',
+    8: '7. Merging',
+    9: 'Final Quiz',
+    10: "A. Key Terms",
+    11: "B. Links"
+  };
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
+    final progressBloc = BlocProvider.of<ProgressBloc>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -39,21 +43,25 @@ class CourseOutline extends StatelessWidget {
         ),
         backgroundColor: Colors.black,
       ),
-      body: buildList(),
+      body: buildStreamBuilder(progressBloc),
     );
   }
 
-  Widget buildList() {
-    return ListView.builder(
-        itemCount: courseTitles.length,
-        itemBuilder: (context, i) {
-          final index = i;
-          return buildListElement(courseTitles[index], context, index);
-        });
+  Widget buildList(BuildContext context) {
+    final progressBloc = BlocProvider.of<ProgressBloc>(context);
+
+    return SingleChildScrollView(
+      child: Column (
+        children: <Widget>[
+          buildStreamBuilder(progressBloc)
+        ],
+      ) 
+    );
   }
 
-  Widget buildListElement(String lessonName, context, index) {
+  Widget buildListElement(String lessonName, context, index, bool unlocked) {
     return ListTile(
+      enabled: unlocked,
       title: Text(lessonName),
       onTap: () {
         tilePressed(context, index);
@@ -61,10 +69,28 @@ class CourseOutline extends StatelessWidget {
     );
   }
 
+  Widget buildStreamBuilder(ProgressBloc progressBloc) {
+    return StreamBuilder<Map<int, bool>>(
+      stream: progressBloc.lessonStream,
+      initialData: progressBloc.currentUnlockedLessons,
+      builder: (context, snapshot) {
+        print(snapshot.data.toString());
+        if(snapshot.data == null) {
+          return Text('Something went wrong.');
+        }
+
+        return ListView.builder(
+          itemCount: snapshot.data.length,
+          itemBuilder: (context, i) {
+            final key = i;
+            return buildListElement(courseTitles[key], context, key, snapshot.data[key]);
+          },
+        );
+      },
+    );
+  }
+
   Future tilePressed(context, tileNumber) async {
-//    Navigator.push(
-//        context,
-//        MaterialPageRoute(builder: (context) => SourceControlLesson()));
     switch(tileNumber) {
       case 0:
         //go to course intro
@@ -90,12 +116,14 @@ class CourseOutline extends StatelessWidget {
                 FlatButton(
                   child: Text('Windows'),
                   onPressed: () {
+                    Navigator.of(buildContext).pop();
                     Navigator.push(context, MaterialPageRoute(builder: (context) => SetupForWindows()));
                   },
                 ),
                 FlatButton(
                   child: Text('Mac'),
                   onPressed: () {
+                    Navigator.of(buildContext).pop();
                     Navigator.push(context, MaterialPageRoute(builder: (context) => SetupForMac()));
                   },
                 ),
@@ -166,6 +194,7 @@ class CourseOutline extends StatelessWidget {
                   FlatButton(
                     child: Text('I am ready'),
                     onPressed: () {
+                      Navigator.of(buildContext).pop();
                       Navigator.push(context, MaterialPageRoute(builder: (context) => FinalQStatefulWidget()));
                     },
                   ),

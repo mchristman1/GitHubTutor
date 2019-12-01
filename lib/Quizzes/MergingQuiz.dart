@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:github_tutor/BLoC/bloc.dart';
+import 'package:github_tutor/BLoC/progress-bloc.dart';
+import 'package:github_tutor/BLoC/quiz-bloc.dart';
+import 'package:github_tutor/QuizResults/MergingQuizResults.dart';
 
 import '../Constants.dart';
 
@@ -25,6 +29,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
     );
   }
 
+  List<String> studentAnswers = ['NULL', 'NULL', 'NULL', 'NULL', 'NULL'];
+
   ChoicesMC answer1 = ChoicesMC.NULL;
   ChoicesMC answer2 = ChoicesMC.NULL;
   ChoicesMC answer3 = ChoicesMC.NULL;
@@ -32,6 +38,21 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
   ChoicesMC answer5 = ChoicesMC.NULL;
 
   Widget buildQuiz() {
+
+    final quizBloc = QuizBloc();
+    final progressBloc = BlocProvider.of<ProgressBloc>(context);
+    Function checkProgress() {
+      if (answer1 != ChoicesMC.NULL &&
+          answer2 != ChoicesMC.NULL &&
+          answer3 != ChoicesMC.NULL &&
+          answer4 != ChoicesMC.NULL &&
+          answer5 != ChoicesMC.NULL
+
+      ) {
+        quizBloc.setStatus(true);
+      }
+    }
+
     return Column(
       children: <Widget>[
         Padding(padding: EdgeInsets.all(15),),
@@ -39,6 +60,7 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
             textAlign: TextAlign.center),
         Text('What is a merge?'),
+        //A
         ListTile(
           title: Text('Taking two branches and combining them.'),
           leading: Radio(
@@ -47,6 +69,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -59,6 +83,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -71,6 +97,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer1 = value;
+                studentAnswers[0] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -81,6 +109,7 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
             textAlign: TextAlign.center),
         Text('How would you merge a branch into master?'),
+        //B
         ListTile(
           title: Text('Switch to the branch to be merged in and run "git merge master"'),
           leading: Radio(
@@ -89,6 +118,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -101,6 +132,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -113,6 +146,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer2 = value;
+                studentAnswers[1] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -123,6 +158,7 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
             textAlign: TextAlign.center),
         Text('Which branch gets changed during a merge?'),
+        //A
         ListTile(
           title: Text('The branch the user is on.'),
           leading: Radio(
@@ -131,6 +167,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -143,6 +181,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -155,6 +195,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer3 = value;
+                studentAnswers[2] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -165,6 +207,7 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
             textAlign: TextAlign.center),
         Text('What is a merge conflict?'),
+        //C
         ListTile(
           title: Text('When the branches to be merged are the same.'),
           leading: Radio(
@@ -173,6 +216,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -185,6 +230,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -197,6 +244,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer4 = value;
+                studentAnswers[3] = 'C';
+                checkProgress();
               });
             },
           ),
@@ -207,6 +256,7 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
             textAlign: TextAlign.center),
         Text('When does a merge conlict occur?'),
+        //A
         ListTile(
           title: Text('When the same file in the two branches has been changed.'),
           leading: Radio(
@@ -215,6 +265,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'A';
+                checkProgress();
               });
             },
           ),
@@ -227,6 +279,8 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'B';
+                checkProgress();
               });
             },
           ),
@@ -239,11 +293,86 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
             onChanged: (ChoicesMC value) {
               setState(() {
                 answer5 = value;
+                studentAnswers[4] = 'C';
+                checkProgress();
               });
             },
           ),
         ),
+        buildStreamBuilder(quizBloc, progressBloc),
       ],
+    );
+  }
+
+  List<int> calculateScore() {
+    double correct = 0.00;
+    int correctAnswers = 0;
+
+    if(answer1 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer2 == ChoicesMC.B) {
+      correctAnswers++;
+    }
+
+    if(answer3 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    if(answer4 == ChoicesMC.C) {
+      correctAnswers++;
+    }
+
+    if(answer5 == ChoicesMC.A) {
+      correctAnswers++;
+    }
+
+    correct = correctAnswers/5;
+
+    return [(correct*100).round(), correctAnswers];
+
+  }
+
+  Widget buildStreamBuilder(QuizBloc quizBloc, ProgressBloc progressBloc) {
+    return StreamBuilder<bool>(
+      stream: quizBloc.quizStream,
+      initialData: quizBloc.currentStatus,
+      builder: (context, snapshot) {
+        return RaisedButton(
+          color: snapshot.data ? Color.fromRGBO(46, 188, 79, 1) : Colors.grey,
+          child: Text(
+            'Submit',
+            style: TextStyle(fontSize: 20.0, color: Colors.white),
+          ),
+          onPressed: () {
+            if(answer1 != ChoicesMC.NULL &&
+                answer2 != ChoicesMC.NULL &&
+                answer3 != ChoicesMC.NULL &&
+                answer4 != ChoicesMC.NULL &&
+                answer5 != ChoicesMC.NULL
+            ) {
+              List<int> results = calculateScore();
+
+              if(progressBloc.currentUnlockedLessons[9] == false && results[0] >= 80) {
+                progressBloc.unlockNextLesson(9);
+              }
+
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      fullscreenDialog: true,
+                      builder: (context) => MergingQuizResults(
+                          score: results[0],
+                          correct: results[1],
+                          studentAnswers: studentAnswers
+                      ))
+              );
+//              Navigator.popUntil(context, ModalRoute.withName('CourseOutline'));
+            }
+          },
+        );
+      },
     );
   }
 }
