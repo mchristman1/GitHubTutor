@@ -1,3 +1,6 @@
+//SetupForMac.dart
+//Mac setup lesson
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Quizzes/SetupMacQuiz.dart';
 
@@ -21,6 +24,7 @@ class SetupForMac extends StatelessWidget {
     );
   }
 
+  //Build the lesson body
   Widget buildLesson(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -128,6 +132,7 @@ class SetupForMac extends StatelessWidget {
     );
   }
 
+  //Expand the image on tap
   Future imageTapped(context, String imagePath) async {
     Navigator.push(
         context,
@@ -135,6 +140,7 @@ class SetupForMac extends StatelessWidget {
     );
   }
 
+  //Go to quiz on button tap
   Future quizPressed(context) async {
     Navigator.push(
       context,

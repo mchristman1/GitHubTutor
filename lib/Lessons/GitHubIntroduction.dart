@@ -1,3 +1,5 @@
+//GitHubIntroduction.dart
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -21,6 +23,7 @@ class GitHubIntroduction extends StatelessWidget {
     );
   }
 
+  //Build the lesson body
   Widget buildLesson(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -102,6 +105,7 @@ class GitHubIntroduction extends StatelessWidget {
     );
   }
 
+  //Go to the quiz
   Future goToQuiz(context) async {
     Navigator.push(
       context,

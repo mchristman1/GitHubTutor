@@ -1,3 +1,6 @@
+//MergingQuiz.dart
+//Merging lesson quiz
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/BLoC/bloc.dart';
 import 'package:github_tutor/BLoC/progress-bloc.dart';

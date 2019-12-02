@@ -1,3 +1,5 @@
+//CommandsWindowsQuizResults
+
 import 'package:flutter/material.dart';
 
 class WindowsCommandsQuizResults extends StatelessWidget {
@@ -411,7 +413,7 @@ class WindowsCommandsQuizResults extends StatelessWidget {
         RaisedButton(
           child: Text('Continue', style: TextStyle(fontSize: 17.0, color: Colors.white),),
           color: Colors.green,
-          onPressed: () { Navigator.popUntil(context, ModalRoute.withName('CourseOutline')); },
+          onPressed: () { Navigator.popUntil(context, ModalRoute.withName('/CourseOutline')); },
         )
       ],
     );

@@ -1,3 +1,6 @@
+//RepositoryLesson.dart
+//Repository Lesson Page
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Quizzes/RepositoryQuiz.dart';
@@ -22,6 +25,7 @@ class RepositoryLesson extends StatelessWidget {
     );
   }
 
+  //Build the lesson content
   Widget buildLesson(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -209,6 +213,8 @@ class RepositoryLesson extends StatelessWidget {
     );
   }
 
+
+  //Expand image on tap
   Future imageTapped(context, String imagePath) async {
     Navigator.push(
         context,
@@ -216,6 +222,7 @@ class RepositoryLesson extends StatelessWidget {
     );
   }
 
+  //Go to quiz on button tap
   Future quizPressed(context) async {
     Navigator.push(
       context,

@@ -1,3 +1,6 @@
+//AccountQuiz.dart
+//Account quiz
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/BLoC/bloc.dart';
 import 'package:github_tutor/BLoC/progress-bloc.dart';
@@ -5,6 +8,7 @@ import 'package:github_tutor/BLoC/quiz-bloc.dart';
 import 'package:github_tutor/Constants.dart';
 import 'package:github_tutor/QuizResults/AccountQuizResults.dart';
 
+//Need a stateful widget for the radio buttons
 class AccountQStatefulWidget extends StatefulWidget {
   AccountQStatefulWidget({Key key}) : super(key: key);
 
@@ -37,11 +41,13 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
   ChoicesMC answer5 = ChoicesMC.NULL;
 
 
-
+  //Build the quiz body
   Widget buildQuiz() {
 
     final quizBloc = QuizBloc();
     final progressBloc = BlocProvider.of<ProgressBloc>(context);
+
+    //Check to see if the user has answered all questions
     Function checkProgress() {
       if (answer1 != ChoicesMC.NULL &&
           answer2 != ChoicesMC.NULL &&
@@ -370,6 +376,7 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
     );
   }
 
+  //Calculate the score
   List<int> calculateScore() {
     double correct = 0.00;
     int correctAnswers = 0;
@@ -400,6 +407,7 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
 
   }
 
+  //Sream builder for Quiz BLoC
   Widget buildStreamBuilder(QuizBloc quizBloc, ProgressBloc progressBloc) {
     return StreamBuilder<bool>(
       stream: quizBloc.quizStream,
@@ -434,7 +442,6 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
                           studentAnswers: studentAnswers
                       ))
               );
-//              Navigator.popUntil(context, ModalRoute.withName('CourseOutline'));
             }
           },
         );

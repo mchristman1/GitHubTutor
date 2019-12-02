@@ -1,3 +1,6 @@
+//ImageExpandedView.dart
+//This class is used to expand images when they are tapped
+
 import 'package:flutter/material.dart';
 
 class ImageExpandedView extends StatelessWidget {

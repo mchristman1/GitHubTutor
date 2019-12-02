@@ -1,3 +1,6 @@
+//IntroToGitHubQuiz.dart
+//GitHub Introduction quiz
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/BLoC/bloc.dart';
 import 'package:github_tutor/BLoC/progress-bloc.dart';
@@ -5,7 +8,7 @@ import 'package:github_tutor/BLoC/quiz-bloc.dart';
 import 'package:github_tutor/Constants.dart';
 import 'package:github_tutor/QuizResults/IntroGitHubQuizResults.dart';
 
-
+//Need a stateful widget for the radio buttons
 class IntroGitHubQStatefulWidget extends StatefulWidget {
   IntroGitHubQStatefulWidget({Key key}) : super(key: key);
 
@@ -41,6 +44,8 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
 
     final quizBloc = QuizBloc();
     final progressBloc = BlocProvider.of<ProgressBloc>(context);
+
+    //Check if all questions have been answered
     Function checkProgress() {
       if (answer1 != ChoicesMC.NULL &&
           answer2 != ChoicesMC.NULL &&
@@ -374,6 +379,7 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
 
   }
 
+  //Build the stream for the Quiz BLoC
   Widget buildStreamBuilder(QuizBloc quizBloc, ProgressBloc progressBloc) {
     return StreamBuilder<bool>(
       stream: quizBloc.quizStream,

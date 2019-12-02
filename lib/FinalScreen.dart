@@ -1,3 +1,6 @@
+//FinalScreen.dart
+//The final screen the user sees after passing the final quiz
+
 import 'package:flutter/material.dart';
 
 class FinalScreen extends StatelessWidget {

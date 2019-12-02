@@ -1,3 +1,6 @@
+//FinalQuiz.dart
+//Final quiz for the tutor
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/BLoC/bloc.dart';
 import 'package:github_tutor/BLoC/progress-bloc.dart';
@@ -5,6 +8,7 @@ import 'package:github_tutor/BLoC/quiz-bloc.dart';
 import 'package:github_tutor/Constants.dart';
 import 'package:github_tutor/QuizResults/FinalQuizResults.dart';
 
+//Need a stateful widget for the radio buttons
 class FinalQStatefulWidget extends StatefulWidget {
   FinalQStatefulWidget({Key key}) : super(key : key);
 
@@ -61,6 +65,8 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
 
     final quizBloc = QuizBloc();
     final progressBloc = BlocProvider.of<ProgressBloc>(context);
+
+    //Check to see if student has answered all questions
     Function checkProgress() {
       if (answer1 != ChoicesMC.NULL && answer2 != ChoicesMC.NULL &&
           answer3 != ChoicesMC.NULL && answer4 != ChoicesMC.NULL &&
@@ -1243,6 +1249,7 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
 
   }
 
+  //Stream builder for the Quiz BLoC
   Widget buildStreamBuilder(QuizBloc quizBloc, ProgressBloc progressBloc) {
     return StreamBuilder<bool>(
       stream: quizBloc.quizStream,
@@ -1278,7 +1285,6 @@ class FinalQuizState extends State<FinalQStatefulWidget> {
                           studentAnswers: studentAnswers
                       ))
               );
-//              Navigator.popUntil(context, ModalRoute.withName('CourseOutline'));
             }
           },
         );

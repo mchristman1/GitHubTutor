@@ -1,3 +1,6 @@
+//MergingLesson.dart
+//Merging Lesson
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Quizzes/MergingQuiz.dart';
 
@@ -22,6 +25,7 @@ class MergingLesson extends StatelessWidget {
     );
   }
 
+  //Build the lesson content
   Widget buildLesson(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -110,6 +114,7 @@ class MergingLesson extends StatelessWidget {
     );
   }
 
+  //Expand image on tap
   Future imageTapped(context, String imagePath) async {
     Navigator.push(
         context,
@@ -117,7 +122,7 @@ class MergingLesson extends StatelessWidget {
     );
   }
 
-
+  //Take user to the quiz when button is tapped
   Future goToQuiz(context) async {
     Navigator.push(
       context,

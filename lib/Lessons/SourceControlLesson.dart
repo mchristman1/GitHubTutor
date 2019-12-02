@@ -1,3 +1,6 @@
+//SourceControlLesson.dart
+//Source control lesson
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Quizzes/SourceControlQuiz.dart';
 
@@ -20,6 +23,7 @@ class SourceControlLesson extends StatelessWidget {
     );
   }
 
+  //Build the lesson layout
   Widget buildLessonLayout(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,6 +38,7 @@ class SourceControlLesson extends StatelessWidget {
     );
   }
 
+  //Build the introduction and objectives
   Widget buildLessonIntro() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -72,6 +77,7 @@ class SourceControlLesson extends StatelessWidget {
     );
   }
 
+  //Build the lesson content
   Widget buildLessonContent(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -123,6 +129,7 @@ class SourceControlLesson extends StatelessWidget {
     );
   }
 
+  //Go to quiz on tap
   Future quizPressed(context) async {
     Navigator.push(
       context,

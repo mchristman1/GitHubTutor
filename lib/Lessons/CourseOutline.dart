@@ -1,7 +1,8 @@
+//CourseOutline.dart
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/BLoC/bloc.dart';
 import 'package:github_tutor/BLoC/progress-bloc.dart';
-import 'package:github_tutor/Constants.dart';
 import 'package:github_tutor/KeyTerms.dart';
 import 'package:github_tutor/Lessons/AccountLesson.dart';
 import 'package:github_tutor/Lessons/CourseIntroduction.dart';
@@ -18,6 +19,8 @@ import 'package:github_tutor/Quizzes/FinalQuiz.dart';
 import 'package:github_tutor/Quizzes/MidCourseQuiz.dart';
 
 class CourseOutline extends StatelessWidget {
+
+  //Course titles and numbers
   final Map<int, String> courseTitles = {
     0: '0. Introduction',
     1: '1. Introduction to Source Control',
@@ -49,6 +52,7 @@ class CourseOutline extends StatelessWidget {
     );
   }
 
+  //Builds a list for the courses
   Widget buildList(BuildContext context) {
     final progressBloc = BlocProvider.of<ProgressBloc>(context);
 
@@ -61,6 +65,7 @@ class CourseOutline extends StatelessWidget {
     );
   }
 
+  //Builds a list tile with the params passed
   Widget buildListElement(String lessonName, context, index, bool unlocked) {
     return ListTile(
       enabled: unlocked,
@@ -71,12 +76,14 @@ class CourseOutline extends StatelessWidget {
     );
   }
 
+  //BLoC usage
+  //Calls the BLoC to listen to updates and get the users
+  //progress
   Widget buildStreamBuilder(ProgressBloc progressBloc) {
     return StreamBuilder<Map<int, bool>>(
       stream: progressBloc.lessonStream,
       initialData: progressBloc.currentUnlockedLessons,
       builder: (context, snapshot) {
-        print(snapshot.data.toString());
         if(snapshot.data == null) {
           return Text('Something went wrong.');
         }
@@ -92,6 +99,7 @@ class CourseOutline extends StatelessWidget {
     );
   }
 
+  //Take users to the lesson when it is tapped
   Future tilePressed(context, tileNumber) async {
     switch(tileNumber) {
       case 0:

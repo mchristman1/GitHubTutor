@@ -1,3 +1,6 @@
+//quiz-bloc.dart
+//used by quizzes to check when student has answered all questions
+
 import 'dart:async';
 
 import 'package:github_tutor/BLoC/bloc.dart';

@@ -1,3 +1,6 @@
+//Links.dart
+//Links page
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -65,7 +68,7 @@ class Links extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Text('Checout the GitHub Tutor\'s GitHub at:', style: TextStyle(fontSize: 17, color: Colors.black), textAlign: TextAlign.left,),
+          child: Text('Checkout the GitHub Tutor\'s GitHub at:', style: TextStyle(fontSize: 17, color: Colors.black), textAlign: TextAlign.left,),
         ),
         Container(
           padding: EdgeInsets.all(15.0),

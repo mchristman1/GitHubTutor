@@ -1,3 +1,5 @@
+//MergingQuizResults.dart
+
 import 'package:flutter/material.dart';
 
 class MergingQuizResults extends StatelessWidget {
@@ -222,7 +224,7 @@ class MergingQuizResults extends StatelessWidget {
         RaisedButton(
           child: Text('Continue', style: TextStyle(fontSize: 17.0, color: Colors.white),),
           color: Colors.green,
-          onPressed: () { Navigator.popUntil(context, ModalRoute.withName('CourseOutline')); },
+          onPressed: () { Navigator.popUntil(context, ModalRoute.withName('/CourseOutline')); },
         )
       ],
     );

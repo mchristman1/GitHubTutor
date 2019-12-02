@@ -1,3 +1,6 @@
+//ProgressStorage.dart
+//Provides access to file where lesson progress is stored
+
 import 'dart:io';
 
 import 'package:github_tutor/Constants.dart';

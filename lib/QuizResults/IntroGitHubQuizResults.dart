@@ -1,3 +1,5 @@
+//IntroGitHubQuizResults.dart
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Constants.dart';
 
@@ -227,7 +229,7 @@ class IntroGitHubQuizResults extends StatelessWidget {
         RaisedButton(
           child: Text('Continue', style: TextStyle(fontSize: 17.0, color: Colors.white),),
           color: Colors.green,
-          onPressed: () { Navigator.popUntil(context, ModalRoute.withName('CourseOutline')); },
+          onPressed: () { Navigator.popUntil(context, ModalRoute.withName('/CourseOutline')); },
         )
       ],
     );

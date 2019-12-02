@@ -1,3 +1,6 @@
+//MacCommands.dart
+//Mac Commands lesson
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Lessons/ImageExpandedView.dart';
 import 'package:github_tutor/Quizzes/MacCommandsQuiz.dart';
@@ -21,6 +24,7 @@ class MacCommands extends StatelessWidget {
     );
   }
 
+  //Build the lesson content
   Widget buildLesson(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -129,6 +133,7 @@ class MacCommands extends StatelessWidget {
     );
   }
 
+  //Expand image when tapped
   Future imageTapped(context, String imagePath) async {
     Navigator.push(
         context,
@@ -136,6 +141,7 @@ class MacCommands extends StatelessWidget {
     );
   }
 
+  //Go to quiz when quiz button is tapped
   Future goToQuiz(context) async {
     Navigator.push(
         context,

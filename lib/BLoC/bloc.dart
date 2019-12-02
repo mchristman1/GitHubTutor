@@ -1,7 +1,8 @@
+//bloc.dart
+
 import 'package:flutter/material.dart';
 
 /* All of this code is taken directly from Ray Wenderlich's Tutorial,
-* see that for any explanations
 * https://www.raywenderlich.com/4074597-getting-started-with-the-bloc-pattern */
 
 /* ======== Bloc Pattern Generic Classes ======== */
@@ -16,14 +17,12 @@ class BlocProvider<T extends Bloc> extends StatefulWidget {
   const BlocProvider({Key key, @required this.bloc, @required this.child})
       : super(key: key);
 
-  // 2
   static T of<T extends Bloc>(BuildContext context) {
     final type = _providerType<BlocProvider<T>>();
     final BlocProvider<T> provider = context.ancestorWidgetOfExactType(type);
     return provider.bloc;
   }
 
-  // 3
   static Type _providerType<T>() => T;
 
   @override
@@ -31,11 +30,9 @@ class BlocProvider<T extends Bloc> extends StatefulWidget {
 }
 
 class _BlocProviderState extends State<BlocProvider> {
-  // 4
   @override
   Widget build(BuildContext context) => widget.child;
 
-  // 5
   @override
   void dispose() {
     widget.bloc.dispose();

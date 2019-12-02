@@ -1,3 +1,6 @@
+//Account lesson.dart
+//Account setup lesson
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Lessons/ImageExpandedView.dart';
@@ -22,6 +25,7 @@ class AccountLesson extends StatelessWidget {
     );
   }
 
+  //Builds the lesson content
   Widget buildLesson(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -170,6 +174,7 @@ class AccountLesson extends StatelessWidget {
     );
   }
 
+  //Expands image
   Future imageTapped(context, String imagePath) async {
     Navigator.push(
       context,
@@ -177,6 +182,7 @@ class AccountLesson extends StatelessWidget {
     );
   }
 
+  //Takes user to quiz
   Future quizPressed(context) async {
     Navigator.push(
       context,

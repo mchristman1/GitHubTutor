@@ -1,3 +1,6 @@
+//WindowsCommands.dart
+//Windows commands lesson
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Lessons/ImageExpandedView.dart';
 import 'package:github_tutor/Quizzes/WindowsCommandsQuiz.dart';
@@ -20,6 +23,7 @@ class WindowsCommands extends StatelessWidget {
     );
   }
 
+  //Build the lesson content
   Widget buildLesson(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -128,6 +132,7 @@ class WindowsCommands extends StatelessWidget {
     );
   }
 
+  //Expand image on tap
   Future imageTapped(context, String imagePath) async {
     Navigator.push(
         context,
@@ -135,6 +140,7 @@ class WindowsCommands extends StatelessWidget {
     );
   }
 
+  //Go to quiz on button press
   Future goToQuiz(context) async {
     Navigator.push(
         context,

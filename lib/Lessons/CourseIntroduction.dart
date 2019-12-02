@@ -1,3 +1,5 @@
+//CourseIntroduction.dart
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:github_tutor/BLoC/bloc.dart';
@@ -21,6 +23,7 @@ class CourseIntroduction extends StatelessWidget {
     );
   }
 
+  //Build the page body
   Widget buildIntroduction(BuildContext context) {
     final progressBloc = BlocProvider.of<ProgressBloc>(context);
 
@@ -34,13 +37,17 @@ class CourseIntroduction extends StatelessWidget {
           Container(
             child: introduction,
           ),
-          RaisedButton(
-            child: Text('Continue'),
+          Container(
             padding: EdgeInsets.all(15.0),
-            onPressed: () {
-              progressBloc.unlockNextLesson(1);
-              Navigator.pop(context);
-            },
+            width: 100,
+            height: 100,
+            child: RaisedButton(
+              child: Text('Continue'),
+              onPressed: () {
+                progressBloc.unlockNextLesson(1);
+                Navigator.pop(context);
+              },
+            ),
           )
         ],
       ),

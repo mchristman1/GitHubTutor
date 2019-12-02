@@ -1,4 +1,5 @@
-//import 'dart:js';
+// Main.dart
+// this is the initial run point for the app
 
 import 'package:flutter/material.dart';
 import 'package:github_tutor/BLoC/bloc.dart';
@@ -7,6 +8,7 @@ import 'package:github_tutor/Constants.dart';
 import 'package:github_tutor/Lessons/CourseOutline.dart';
 import 'package:github_tutor/ProgressStorage.dart';
 
+//Runs the app
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -20,13 +22,14 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(backgroundColor: Colors.black),
           home: MainPage(),
           routes: {
-            'CourseOutline': (BuildContext context) => CourseOutline()
+            '/CourseOutline': (BuildContext context) => CourseOutline()
           },
         ),
     );
   }
 }
 
+//Home screen of the app
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -98,17 +101,20 @@ class MainPage extends StatelessWidget {
             ))));
   }
 
+  //Takes user to about page
   Future aboutPressed(context) async {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => AboutRoute()));
   }
 
+  //Takes user to course outline
   Future getStartedPressed(context) async {
     Navigator.pushNamed(
-        context, 'CourseOutline');
+        context, '/CourseOutline');
   }
 }
 
+//The about page
 class AboutRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

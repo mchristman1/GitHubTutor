@@ -1,3 +1,6 @@
+//KeyTerms.dart
+//Key terms page
+
 import 'package:flutter/material.dart';
 
 class KeyTerms extends StatelessWidget {

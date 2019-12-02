@@ -1,3 +1,6 @@
+//SetupForWindows.dart
+//Windows Setup Lesson
+
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Quizzes/SetupWindowsQuiz.dart';
 
@@ -21,6 +24,7 @@ class SetupForWindows extends StatelessWidget {
     );
   }
 
+  //Build lesson content
   Widget buildLesson(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -128,6 +132,7 @@ class SetupForWindows extends StatelessWidget {
     );
   }
 
+  //Expand image on tap
   Future imageTapped(context, String imagePath) async {
     Navigator.push(
         context,
@@ -135,6 +140,7 @@ class SetupForWindows extends StatelessWidget {
     );
   }
 
+  //Go to quiz on button tap
   Future quizPressed(context) async {
     Navigator.push(
         context,
