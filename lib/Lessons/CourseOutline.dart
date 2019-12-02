@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:github_tutor/BLoC/bloc.dart';
 import 'package:github_tutor/BLoC/progress-bloc.dart';
 import 'package:github_tutor/Constants.dart';
+import 'package:github_tutor/KeyTerms.dart';
 import 'package:github_tutor/Lessons/AccountLesson.dart';
 import 'package:github_tutor/Lessons/CourseIntroduction.dart';
 import 'package:github_tutor/Lessons/GitHubIntroduction.dart';
@@ -12,6 +13,7 @@ import 'package:github_tutor/Lessons/RepositoryLesson.dart';
 import 'package:github_tutor/Lessons/SetupForMac.dart';
 import 'package:github_tutor/Lessons/SetupForWindows.dart';
 import 'package:github_tutor/Lessons/SourceControlLesson.dart';
+import 'package:github_tutor/Links.dart';
 import 'package:github_tutor/Quizzes/FinalQuiz.dart';
 import 'package:github_tutor/Quizzes/MidCourseQuiz.dart';
 
@@ -156,12 +158,14 @@ class CourseOutline extends StatelessWidget {
                   FlatButton(
                     child: Text('Windows'),
                     onPressed: () {
+                      Navigator.of(buildContext).pop();
                       Navigator.push(context, MaterialPageRoute(builder: (context) => WindowsCommands()));
                     },
                   ),
                   FlatButton(
                     child: Text('Mac'),
                     onPressed: () {
+                      Navigator.of(buildContext).pop();
                       Navigator.push(context, MaterialPageRoute(builder: (context) => MacCommands()));
                     },
                   ),
@@ -207,6 +211,18 @@ class CourseOutline extends StatelessWidget {
                 ],
               );
             }
+        );
+        break;
+      case 10:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => KeyTerms())
+        );
+        break;
+      case 11:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Links())
         );
         break;
       default:

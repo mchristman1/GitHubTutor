@@ -55,11 +55,22 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
 
     return Column(
       children: <Widget>[
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 1 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a repository?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 1 of 5\n',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a repository?'),
+                ]
+            ),
+          ),
+        ),
+
         //B
         ListTile(
           title: Text('A fancy term for a project on GitHub.'),
@@ -104,11 +115,21 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
           ),
         ),
         Divider( height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 2 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a collaborator?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 2 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a collaborator?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('People given permission to contrbute to the repository.'),
@@ -153,12 +174,22 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
           ),
         ),
         Divider( height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 3 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        //T
-        Text('True or False: Collaborators are given read and write permissions by default.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 3 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold,),
+                  ),
+                  //T
+                  TextSpan(text: 'True or False: Collaborators are given read and write permissions by default.'),
+                ]
+            ),
+          ),
+        ),
         ListTile(
           title: Text('True'),
           leading: Radio(
@@ -188,11 +219,21 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
           ),
         ),
         Divider( height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 4 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('When creating a repository, what should the name be?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 4 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold,),
+                  ),
+                  TextSpan(text: 'When creating a repository, what should the name be?'),
+                ]
+            ),
+          ),
+        ),
         //C
         ListTile(
           title: Text('Something creative.'),
@@ -237,11 +278,21 @@ class RepositoryQuizState extends State<RepoQuizStatefulWidget> {
           ),
         ),
         Divider( height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 5 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: A public repository can only be viewed by those the creator has listed under the "viewers" tab.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 5 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: A public repository can only be viewed by those the creator has listed under the "viewers" tab.'),
+                ]
+            ),
+          ),
+        ),
         //F
         ListTile(
           title: Text('True'),

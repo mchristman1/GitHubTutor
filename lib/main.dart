@@ -38,6 +38,7 @@ class MainPage extends StatelessWidget {
             body: Center(
                 child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.all(32.00),
@@ -51,38 +52,48 @@ class MainPage extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 20, bottom: 20),
+                  padding: EdgeInsets.only(bottom: 15.0),
                 ),
                 Image.asset(
                   'imageAssets/GithubLogo.png',
-                  width: 164,
-                  height: 164,
+                  width: 200,
+                  height: 200,
                 ),
-                RaisedButton(
-                  color: Color.fromRGBO(46, 188, 79, 1),
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.white,
-                        fontFamily: 'Arial'),
-                  ),
-                  onPressed: () {
-                    getStartedPressed(context);
-                  },
-                ),
-                RaisedButton(
-                    color: Color.fromRGBO(16, 116, 231, 1),
+                Padding(padding: EdgeInsets.only(top: 15.0),),
+                Container(
+                  height: 50,
+                  width: 150,
+                  child: RaisedButton(
+                    color: Color.fromRGBO(46, 188, 79, 1),
                     child: Text(
-                      'About',
+                      'Get Started',
                       style: TextStyle(
                           fontSize: 20.0,
                           color: Colors.white,
                           fontFamily: 'Arial'),
                     ),
                     onPressed: () {
-                      aboutPressed(context);
-                    }),
+                      getStartedPressed(context);
+                    },
+                  ),
+                ),
+                Padding(padding: EdgeInsets.only(top: 15.0),),
+                Container(
+                  height: 50,
+                  width: 150,
+                  child: RaisedButton(
+                      color: Color.fromRGBO(16, 116, 231, 1),
+                      child: Text(
+                        'About',
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white,
+                            fontFamily: 'Arial'),
+                      ),
+                      onPressed: () {
+                        aboutPressed(context);
+                      }),
+                ),
               ],
             ))));
   }

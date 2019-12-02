@@ -55,16 +55,25 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
 
     return Column(
       children: <Widget>[
-        Padding(padding: EdgeInsets.all(10.0),),
-        Text(
-          'Question 1 of 5',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 17.0
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 1 of 5\n',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(text: 'What is GitHub?' ),
+                ]
+            ),
           ),
         ),
-        Text( 'What is GitHub?' ),
+
         //B
         ListTile(
           title: Text('A version control system.'),
@@ -109,16 +118,25 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10)),
-        Text(
-          'Question 2 of 5',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 17.0
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 2 of 5\n',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(text: 'What is Git?' ),
+                ]
+            ),
           ),
         ),
-        Text( 'What is Git?' ),
+
         //C
         ListTile(
           title: Text('A software hosting service.'),
@@ -162,16 +180,24 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10)),
-        Text(
-          'Question 3 of 5',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 17.0
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 3 of 5\n',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(text: 'What is the primary use for GitHub?' ),
+                ]
+            ),
           ),
         ),
-        Text( 'What is the primary use for GitHub?' ),
         //A
         ListTile(
           title: Text('Source control and code management.'),
@@ -216,16 +242,25 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10)),
-        Text(
-          'Question 4 of 5',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 17.0
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 4 of 5\n',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan( text: 'True or False: GitHub can ONLY be used for managing code' ),
+                ]
+            ),
           ),
         ),
-        Text( 'True or False: GitHub can ONLY be used for managing code' ),
+
         //F
         ListTile(
           title: Text('True'),
@@ -256,16 +291,25 @@ class IntroGitHubQuizState extends State<IntroGitHubQStatefulWidget> {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10)),
-        Text(
-          'Question 5 of 5',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 17.0
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 5 of 5\n',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(text: 'True or False: GitHub and Git are the same thing' ),
+                ]
+            ),
           ),
         ),
-        Text( 'True or False: GitHub and Git are the same thing' ),
+
         //F
         ListTile(
           title: Text('True'),

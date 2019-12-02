@@ -55,11 +55,22 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
 
     return Column(
       children: <Widget>[
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 1 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a merge?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 1 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a merge?'),
+                ]
+            ),
+          ),
+        ),
+
         //A
         ListTile(
           title: Text('Taking two branches and combining them.'),
@@ -105,10 +116,21 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ),
         Padding(padding: EdgeInsets.all(15),),
         Divider(height: 3, thickness: 3,),
-        Text('Question 2 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('How would you merge a branch into master?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 2 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold,),
+                  ),
+                  TextSpan(text: 'How would you merge a branch into master?'),
+                ]
+            ),
+          ),
+        ),
         //B
         ListTile(
           title: Text('Switch to the branch to be merged in and run "git merge master"'),
@@ -154,10 +176,21 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ),
         Padding(padding: EdgeInsets.all(15),),
         Divider(height: 3, thickness: 3,),
-        Text('Question 3 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('Which branch gets changed during a merge?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 3 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'Which branch gets changed during a merge?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('The branch the user is on.'),
@@ -203,10 +236,22 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ),
         Padding(padding: EdgeInsets.all(15),),
         Divider(height: 3, thickness: 3,),
-        Text('Question 4 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a merge conflict?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 4 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a merge conflict?'),
+                ]
+            ),
+          ),
+        ),
+
         //C
         ListTile(
           title: Text('When the branches to be merged are the same.'),
@@ -252,10 +297,22 @@ class MergingQuizState extends State<MergingQStatefulWidget> {
         ),
         Padding(padding: EdgeInsets.all(15),),
         Divider(height: 3, thickness: 3,),
-        Text('Question 5 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('When does a merge conlict occur?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 5 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'When does a merge conlict occur?'),
+                ]
+            ),
+          ),
+        ),
+
         //A
         ListTile(
           title: Text('When the same file in the two branches has been changed.'),

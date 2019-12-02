@@ -9,7 +9,7 @@ class SetupForWindows extends StatelessWidget {
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text(
-          'Mac Setup',
+          'Windows Setup',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.black,

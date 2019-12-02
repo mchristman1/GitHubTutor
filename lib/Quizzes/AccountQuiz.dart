@@ -56,13 +56,23 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
 
     return Column(
       children: <Widget>[
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 1 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text(
-          'What should you do when creating a username?',
-          style: TextStyle(fontSize: 17),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              style: TextStyle(fontSize: 20.0, color: Colors.black),
+              children: [
+                TextSpan(
+                    text: 'Question 1 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(
+                  text: 'What should you do when creating a username?',
+                ),
+              ]
+            ),
+          ),
         ),
         //A
         ListTile(
@@ -108,14 +118,25 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 2 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text(
-          'What email should you use when creating an account?',
-          style: TextStyle(fontSize: 17),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 2 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(
+                    text: 'What email should you use when creating an account?',
+                  ),
+                ]
+            ),
+          ),
         ),
+
         //C
         ListTile(
           title: Text('Your spam account.'),
@@ -160,13 +181,23 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 3 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text(
-          'What should your password be?',
-          style: TextStyle(fontSize: 17),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 3 of 5\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(
+                  text: 'What should your password be?',
+                  ),
+                ]
+            ),
+          ),
         ),
         //C
         ListTile(
@@ -212,13 +243,22 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 4 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text(
-          'What sorts of plans are offered?',
-          style: TextStyle(fontSize: 17),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 4 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(
+                    text: 'What sorts of plans are offered?',
+                  ),
+                ]
+            ),
+          ),
         ),
         //A
         ListTile(
@@ -264,14 +304,23 @@ class AccountQuizState extends State<AccountQStatefulWidget> {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 5 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text(
-          'Which of the below is NOT a feature of your free account?',
-          style: TextStyle(fontSize: 17),
-          textAlign: TextAlign.center,
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 5 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(
+                    text: 'Which of the below is NOT a feature of your free account?',
+                  ),
+                ]
+            ),
+          ),
         ),
         //B
         ListTile(

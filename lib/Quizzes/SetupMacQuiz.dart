@@ -54,11 +54,21 @@ class SetupMacQuizState extends State<SetupMacQuizStatefulWidget> {
 
     return Column(
       children: <Widget>[
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 1 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is the first step for setting up GitHub interaction on a Mac?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 1 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is the first step for setting up GitHub interaction on a Mac?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('Download Git for Mac.'),
@@ -103,11 +113,21 @@ class SetupMacQuizState extends State<SetupMacQuizStatefulWidget> {
           ),
         ),
         Divider( height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 2 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is the command to generate the SSH key?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 2 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold,),
+                  ),
+                  TextSpan(text: 'What is the command to generate the SSH key?'),
+                ]
+            ),
+          ),
+        ),
         //B
         ListTile(
           title: Text('ssh-key generate rsa -b 4096 -C "your email address"'),
@@ -152,11 +172,21 @@ class SetupMacQuizState extends State<SetupMacQuizStatefulWidget> {
           ),
         ),
         Divider( height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 3 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('How is the SSH key stored?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 3 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold,),
+                  ),
+                  TextSpan(text: 'How is the SSH key stored?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('In a file called Users/username/.ssh/id_rsa'),
@@ -201,11 +231,21 @@ class SetupMacQuizState extends State<SetupMacQuizStatefulWidget> {
           ),
         ),
         Divider( height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 4 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is the first step when adding the SSH key to the SSH-Agent?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 4 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is the first step when adding the SSH key to the SSH-Agent?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('Start the SSH-Agent.'),
@@ -250,11 +290,21 @@ class SetupMacQuizState extends State<SetupMacQuizStatefulWidget> {
           ),
         ),
         Divider( height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(10),),
-        Text('Question 5 of 5',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('After the SSH key has been copied to your clipboard, what should you do next?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 5 of 5\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'After the SSH key has been copied to your clipboard, what should you do next?'),
+                ]
+            ),
+          ),
+        ),
         //C
         ListTile(
           title: Text('This is not a step.'),

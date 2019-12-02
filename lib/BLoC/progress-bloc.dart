@@ -12,6 +12,7 @@ class ProgressBloc implements Bloc {
   final ProgressStorage storage;
 
   ProgressBloc(this.storage) {
+    print('Reading storage');
     storage.readProgress().then((Map<int,bool> values) {
       setInitialLessons(values);
     });
