@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Quizzes/RepositoryQuiz.dart';
 
+import 'ImageExpandedView.dart';
+
 class RepositoryLesson extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
@@ -82,7 +83,10 @@ class RepositoryLesson extends StatelessWidget {
               //insert image
               Container(
                 padding: EdgeInsets.all(15.0),
-                child: Image.asset('imageAssets/Repo-1.png'),
+                child: GestureDetector(
+                    child: Image.asset('imageAssets/Repo-1.png'),
+                  onTap: () {imageTapped(context, 'imageAssets/Repo-1.png');},
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(15.0),
@@ -91,7 +95,10 @@ class RepositoryLesson extends StatelessWidget {
               //insert image
               Container(
                 padding: EdgeInsets.all(15.0),
-                child: Image.asset('imageAssets/Repo-2.png'),
+                child: GestureDetector(
+                    child: Image.asset('imageAssets/Repo-2.png'),
+                  onTap: () {imageTapped(context, 'imageAssets/Repo-2.png');},
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(15.0),
@@ -100,7 +107,10 @@ class RepositoryLesson extends StatelessWidget {
               //insert image
               Container(
                 padding: EdgeInsets.all(15.0),
-                child: Image.asset('imageAssets/Repo-3.png'),
+                child: GestureDetector(
+                    child: Image.asset('imageAssets/Repo-3.png'),
+                  onTap: () {imageTapped(context, 'imageAssets/Repo-3.png');},
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(15.0),
@@ -123,7 +133,10 @@ class RepositoryLesson extends StatelessWidget {
               //insert image
               Container(
                 padding: EdgeInsets.all(15.0),
-                child: Image.asset('imageAssets/Repo-4.png'),
+                child: GestureDetector(
+                    child: Image.asset('imageAssets/Repo-4.png'),
+                  onTap: () {imageTapped(context, 'imageAssets/Repo-4.png');},
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(15.0),
@@ -132,7 +145,10 @@ class RepositoryLesson extends StatelessWidget {
               //insert image
               Container(
                 padding: EdgeInsets.all(15.0),
-                child: Image.asset('imageAssets/Repo-7.png'),
+                child: GestureDetector(
+                    child: Image.asset('imageAssets/Repo-7.png'),
+                  onTap: () {imageTapped(context, 'imageAssets/Repo-7.png');},
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(15.0),
@@ -151,7 +167,10 @@ class RepositoryLesson extends StatelessWidget {
               //insert image
               Container(
                 padding: EdgeInsets.all(15.0),
-                child: Image.asset('imageAssets/Repo-5.png'),
+                child: GestureDetector(
+                    child: Image.asset('imageAssets/Repo-5.png'),
+                  onTap: () {imageTapped(context, 'imageAssets/Repo-5.png');},
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(15.0),
@@ -160,7 +179,10 @@ class RepositoryLesson extends StatelessWidget {
               //insert image
               Container(
                 padding: EdgeInsets.all(15.0),
-                child: Image.asset('imageAssets/Repo-6.png'),
+                child: GestureDetector(
+                    child: Image.asset('imageAssets/Repo-6.png'),
+                  onTap: (){imageTapped(context, 'imageAssets/Repo-6.png');},
+                ),
               ),
               Container(
                 padding: EdgeInsets.all(15.0),
@@ -184,6 +206,13 @@ class RepositoryLesson extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+
+  Future imageTapped(context, String imagePath) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ImageExpandedView(imagePath: imagePath))
     );
   }
 

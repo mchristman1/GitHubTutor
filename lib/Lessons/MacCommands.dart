@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_tutor/Lessons/ImageExpandedView.dart';
 import 'package:github_tutor/Quizzes/MacCommandsQuiz.dart';
 
 class MacCommands extends StatelessWidget {
@@ -58,7 +59,10 @@ class MacCommands extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/Commands-1.png'),
+          child: GestureDetector(
+            child: Image.asset('imageAssets/Commands-1.png'),
+            onTap: () {imageTapped(context, 'imageAssets/Commands-1.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -73,7 +77,10 @@ class MacCommands extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/Commands-2.png'),
+          child: GestureDetector(
+              child: Image.asset('imageAssets/Commands-2.png'),
+              onTap: () {imageTapped(context, 'imageAssets/Commands-2.png');},
+          ),
         ),
         Padding(padding: EdgeInsets.only(top: 25.0),),
         headers[6],
@@ -84,7 +91,10 @@ class MacCommands extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/Commands-3.png'),
+          child: GestureDetector(
+              child: Image.asset('imageAssets/Commands-3.png'),
+            onTap: () { imageTapped(context, 'imageAssets/Commands-3.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -116,6 +126,13 @@ class MacCommands extends StatelessWidget {
           },
         ),
       ],
+    );
+  }
+
+  Future imageTapped(context, String imagePath) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ImageExpandedView(imagePath: imagePath))
     );
   }
 

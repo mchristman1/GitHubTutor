@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Quizzes/SetupWindowsQuiz.dart';
 
+import 'ImageExpandedView.dart';
+
 class SetupForWindows extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
@@ -88,7 +89,10 @@ class SetupForWindows extends StatelessWidget {
         //add image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/setup1.png'),
+          child: GestureDetector(
+              child: Image.asset('imageAssets/setup1.png'),
+            onTap: () {imageTapped(context, 'imageAssets/setup1.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -97,7 +101,10 @@ class SetupForWindows extends StatelessWidget {
         //add image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/setup2.png'),
+          child: GestureDetector(
+              child: Image.asset('imageAssets/setup2.png'),
+            onTap: () {imageTapped(context, 'imageAssets/setup2.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -118,6 +125,13 @@ class SetupForWindows extends StatelessWidget {
           },
         ),
       ],
+    );
+  }
+
+  Future imageTapped(context, String imagePath) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ImageExpandedView(imagePath: imagePath))
     );
   }
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:github_tutor/Quizzes/MergingQuiz.dart';
 
+import 'ImageExpandedView.dart';
+
 class MergingLesson extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,10 @@ class MergingLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/MergeRequest1.png'),
+          child: GestureDetector(
+              child: Image.asset('imageAssets/MergeRequest1.png'),
+            onTap: () {imageTapped(context, 'imageAssets/MergeRequest1.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -67,7 +72,10 @@ class MergingLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/MergeRequest2.png'),
+          child: GestureDetector(
+              child: Image.asset('imageAssets/MergeRequest2.png'),
+            onTap: () {imageTapped(context, 'imageAssets/MergeRequest2.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -76,7 +84,10 @@ class MergingLesson extends StatelessWidget {
         //insert image,
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/MergeRequest3.png'),
+          child: GestureDetector(
+              child: Image.asset('imageAssets/MergeRequest3.png'),
+            onTap: () {imageTapped(context, 'imageAssets/MergeRequest3.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -98,6 +109,14 @@ class MergingLesson extends StatelessWidget {
       ],
     );
   }
+
+  Future imageTapped(context, String imagePath) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ImageExpandedView(imagePath: imagePath))
+    );
+  }
+
 
   Future goToQuiz(context) async {
     Navigator.push(

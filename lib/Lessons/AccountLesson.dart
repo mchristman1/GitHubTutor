@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:github_tutor/Lessons/ImageExpandedView.dart';
 import 'package:github_tutor/Quizzes/AccountQuiz.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -62,8 +63,11 @@ class AccountLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset(
-              'imageAssets/GitHub-Account1.png'
+          child: GestureDetector(
+            child: Image.asset(
+                'imageAssets/GitHub-Account1.png'
+            ),
+            onTap: () {imageTapped(context, 'imageAssets/GitHub-Account1.png');},
           ),
         ),
         Container(
@@ -73,8 +77,11 @@ class AccountLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset(
-              'imageAssets/GitHub-Account2.png'
+          child: GestureDetector (
+            child: Image.asset(
+                'imageAssets/GitHub-Account2.png'
+            ),
+            onTap: () { imageTapped(context, 'imageAssets/GitHub-Account2.png');},
           ),
         ),
         Container(
@@ -84,8 +91,11 @@ class AccountLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset(
-              'imageAssets/GitHub-Account4.png'
+          child: GestureDetector (
+            child: Image.asset(
+                'imageAssets/GitHub-Account4.png'
+            ),
+            onTap: () { imageTapped(context, 'imageAssets/GitHub-Account4.png');},
           ),
         ),
         Container(
@@ -106,8 +116,11 @@ class AccountLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset(
-              'imageAssets/GitHub-Account6.png'
+          child: GestureDetector(
+            child: Image.asset(
+                'imageAssets/GitHub-Account6.png'
+            ),
+            onTap: () {imageTapped(context, 'imageAssets/GitHub-Account6.png');},
           ),
         ),
         Container(
@@ -117,8 +130,11 @@ class AccountLesson extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset(
-              'imageAssets/GitHub-Account7.png'
+          child: GestureDetector(
+            child: Image.asset(
+                'imageAssets/GitHub-Account7.png'
+            ),
+            onTap: () {imageTapped(context, 'imageAssets/GitHub-Account7.png');},
           ),
         ),
         Container(
@@ -151,6 +167,13 @@ class AccountLesson extends StatelessWidget {
           },
         )
       ],
+    );
+  }
+
+  Future imageTapped(context, String imagePath) async {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ImageExpandedView(imagePath: imagePath))
     );
   }
 
@@ -443,6 +466,4 @@ class AccountLesson extends StatelessWidget {
         ]
       ),
   );
-
-
 }

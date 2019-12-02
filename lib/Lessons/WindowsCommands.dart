@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:github_tutor/Lessons/ImageExpandedView.dart';
 import 'package:github_tutor/Quizzes/WindowsCommandsQuiz.dart';
 
 class WindowsCommands extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
@@ -58,7 +58,10 @@ class WindowsCommands extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/Commands-1.png'),
+          child: GestureDetector(
+            child: Image.asset('imageAssets/Commands-1.png'),
+            onTap: () {imageTapped(context, 'imageAssets/Commands-1.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -73,7 +76,10 @@ class WindowsCommands extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/Commands-2.png'),
+          child: GestureDetector(
+            child: Image.asset('imageAssets/Commands-2.png'),
+            onTap: () {imageTapped(context, 'imageAssets/Commands-2.png');},
+          ),
         ),
         Padding(padding: EdgeInsets.only(top: 25.0),),
         headers[6],
@@ -84,7 +90,10 @@ class WindowsCommands extends StatelessWidget {
         //insert image
         Container(
           padding: EdgeInsets.all(15.0),
-          child: Image.asset('imageAssets/Commands-3.png'),
+          child: GestureDetector(
+            child: Image.asset('imageAssets/Commands-3.png'),
+            onTap: () { imageTapped(context, 'imageAssets/Commands-3.png');},
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -116,6 +125,13 @@ class WindowsCommands extends StatelessWidget {
           },
         ),
       ],
+    );
+  }
+
+  Future imageTapped(context, String imagePath) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ImageExpandedView(imagePath: imagePath))
     );
   }
 
