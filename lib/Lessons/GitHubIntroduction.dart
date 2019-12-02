@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:github_tutor/Quizzes/IntroToGiHubQuiz.dart';
+import 'package:github_tutor/Quizzes/IntroToGitHubQuiz.dart';
 class GitHubIntroduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

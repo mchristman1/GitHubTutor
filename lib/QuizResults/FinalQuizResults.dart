@@ -35,7 +35,7 @@ class FinalQuizResults extends StatelessWidget {
                 style: TextStyle(fontSize: 17.0, color: Colors.black),
                 children: [
                   TextSpan(
-                    text: 'Score: $score\nCorrect: $correct out of 20\n\n',
+                    text: 'Score: $score%\nCorrect: $correct out of 20\n\n',
                   ),
                   TextSpan(
                       text: score >= 80 ? 'Quiz passed, review your answers and continue.' :
@@ -46,11 +46,23 @@ class FinalQuizResults extends StatelessWidget {
           ),
         ),
         Divider(height: 3, thickness: 3,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 1 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is source control?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 1 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(
+                      text: 'What is source control?'),
+                ]
+            ),
+          ),
+        ),
         //B
         ListTile(
           title: Text('Controlling the number of resources for a project.'),
@@ -71,11 +83,22 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 2 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is GitHub?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 2 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is GitHub?'),
+                ]
+            ),
+          ),
+        ),
         //B
         ListTile(
           title: Text('A source control system.'),
@@ -96,11 +119,22 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 3 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is Git?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 3 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is Git?'),
+                ]
+            ),
+          ),
+        ),
         //B
         ListTile(
           title: Text('A hardware manufacturing company.'),
@@ -121,11 +155,22 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 4 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a repository?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 4 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a repository?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('A place where project files are stored.'),
@@ -146,11 +191,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 5 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a collaborator?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 5 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a collaborator?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('A person given permission to contribute to the repository.'),
@@ -171,11 +226,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 6 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a README?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 6 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a README?'),
+                ]
+            ),
+          ),
+        ),
         //C
         ListTile(
           title: Text('A text file that only contains licenses.'),
@@ -196,11 +261,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 7 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a commit?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 7 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a commit?'),
+                ]
+            ),
+          ),
+        ),
         //B
         ListTile(
           title: Text('The action that adds changes to GitHub.'),
@@ -221,11 +296,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 8 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a push?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 8 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a push?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('The action that adds changes to GitHub.'),
@@ -246,11 +331,22 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 9 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a branch?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 9 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'What is a branch?'),
+                ]
+            ),
+          ),
+        ),
         //A
         ListTile(
           title: Text('A section of a repository that contains a version of the project.'),
@@ -271,11 +367,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 10 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is a merge?'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 10 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold,),
+                  ),
+                  TextSpan(text: 'What is a merge?'),
+                ]
+            ),
+          ),
+        ),
         //B
         ListTile(
           title: Text('Overwriting a branch with changes.'),
@@ -296,11 +402,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 11 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: GitHub uses Git to provide source control.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 11 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: GitHub uses Git to provide source control.'),
+                ]
+            ),
+          ),
+        ),
         //T
         ListTile(
           title: Text('True'),
@@ -315,11 +431,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 12 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: In a private repository, collaborators are NOT given read and write permissions by default.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 12 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text:'True or False: In a private repository, collaborators are NOT given read and write permissions by default.'),
+                ]
+            ),
+          ),
+        ),
         //F
         ListTile(
           title: Icon(
@@ -333,11 +459,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 13 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: When you commit changes, they are automatically added to GitHub'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 13 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: When you commit changes, they are automatically added to GitHub'),
+                ]
+            ),
+          ),
+        ),
         //F
         ListTile(
           title: Text('True'),
@@ -352,11 +488,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 14 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: Git will ALWAYS handle merges automatically without conflict.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 14 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: Git will ALWAYS handle merges automatically without conflict.'),
+                ]
+            ),
+          ),
+        ),
         //F
         ListTile(
           title: Text('True'),
@@ -371,11 +517,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 15 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: Source control and version control mean the same thing.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 15 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: Source control and version control mean the same thing.'),
+                ]
+            ),
+          ),
+        ),
         //T
         ListTile(
           title: Text('True'),
@@ -390,11 +546,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 16 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: Before you add a key to GitHub, you have to first generate it on your computer.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 16 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: Before you add a key to GitHub, you have to first generate it on your computer.'),
+                ]
+            ),
+          ),
+        ),
         //T
         ListTile(
           title: Text('True'),
@@ -409,11 +575,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 17 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: Git and GitHub are the same thing.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 17 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: Git and GitHub are the same thing.'),
+                ]
+            ),
+          ),
+        ),
         //F
         ListTile(
           title: Text('True'),
@@ -428,11 +604,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 18 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: You can control who can view the repository when it is marked as public.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 18 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: You can control who can view the repository when it is marked as public.'),
+                ]
+            ),
+          ),
+        ),
         //F
         ListTile(
           title: Text('True'),
@@ -447,11 +633,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 19 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: After a merge, the branch merged in will be deleted.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 19 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: After a merge, the branch merged in will be deleted.'),
+                ]
+            ),
+          ),
+        ),
         //F
         ListTile(
           title: Text('True'),
@@ -466,11 +662,21 @@ class FinalQuizResults extends StatelessWidget {
           )
         ),
         Divider(height: 5, thickness: 5,),
-        Padding(padding: EdgeInsets.all(15),),
-        Text('Question 20 of 20',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('True or False: The master branch should contain the latest stable version of the project.'),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 20 of 20\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(text: 'True or False: The master branch should contain the latest stable version of the project.'),
+                ]
+            ),
+          ),
+        ),
         //T
         ListTile(
           title: Text('True'),

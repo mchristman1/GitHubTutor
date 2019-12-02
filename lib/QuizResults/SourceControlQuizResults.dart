@@ -58,14 +58,23 @@ class SourceControlQuizResults extends StatelessWidget {
           height: 3,
           thickness: 3,
         ),
-        Padding(
-          padding: EdgeInsets.all(15),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(text: 'Question 1 of 2\n',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  TextSpan(
+                    text: 'What is source control?',
+                  ),
+                ]
+            ),
+          ),
         ),
-        Text('Question 1 of 2',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-            textAlign: TextAlign.center),
-        Text('What is source control?',
-            style: TextStyle(fontSize: 17), textAlign: TextAlign.center),
         ListTile(
             title: Text(
                 'Management of changes to documents, programs, and other collections of information.'),
@@ -86,16 +95,24 @@ class SourceControlQuizResults extends StatelessWidget {
               color: Colors.red,
             )),
         Divider(height: 3, thickness: 3),
-        Padding(
-          padding: EdgeInsets.all(10),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+                style: TextStyle(fontSize: 20.0, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Question 2 of 2\n',
+                    style: TextStyle(fontWeight: FontWeight.bold,),
+                  ),
+                  TextSpan(
+                    text: 'Why is source control important?',
+                  ),
+                ]
+            ),
+          ),
         ),
-        Text(
-          'Question 2 of 2',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-          textAlign: TextAlign.center,
-        ),
-        Text('Why is source control important?',
-            style: TextStyle(fontSize: 17), textAlign: TextAlign.center),
         ListTile(
             title:
                 Text('Makes it easy to track changes throughout the project.'),
